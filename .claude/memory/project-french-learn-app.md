@@ -18,13 +18,14 @@ A web-first French language learning app (mobile phase 2) using sentence mining,
 - **State (P1)**: localStorage
 - **State (P3)**: Supabase (planned)
 
-## Design Direction (Mango Languages Style)
-- Immersive, calm, adult-friendly (not gamified like Duolingo)
-- French-first: French dominates, English reveals on interaction
-- Color palette: Navy (#1E3A5F) + Gold (#C4A35A) + Cream background
-- Typography: Cormorant Garamond for French, Source Sans 3 for body
-- 3D flip card animation for flashcards
-- Mobile-first responsive design
+## Design Direction (Updated: Apple-Inspired)
+- **Philosophy**: Apple HIG meets French elegance — extremely simple, intuitive, zero manual-reading
+- **Color System**: Apple palette — White (#FFFFFF/Off-white #F8F8FA), Blue (#007AFF), Green (#34C759), Orange (#FF9F0A), Red (#FF3B30), Purple (#AF52DE)
+- **Typography**: SF Pro system fonts, Georgia/Cormorant for French text, 8pt grid
+- **Layout**: Mobile-first, 5-tab bottom nav (Home, Learn, Practice, Progress, Profile)
+- **Animation**: Subtle 200-300ms, ease-out dominant, reduced-motion respected
+- **Principles**: One action per screen, generous whitespace, progressive disclosure, forgiveness over precision
+- **Components**: Cards with 20px radius, 44px touch targets, progress rings, minimal icons + labels
 
 ## Core Learning Philosophy (Agreed with Sir)
 1. **Sentence mining first** — words in context, never isolated
