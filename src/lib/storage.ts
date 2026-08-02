@@ -68,8 +68,6 @@ export function saveReviewRecord(record: ReviewRecord): void {
 export function loadUserStats(): UserStats {
   const stats = getItem<UserStats>(STORAGE_KEYS.USER_STATS, DEFAULT_USER_STATS);
 
-  // Check if it's a new day for streak calculation
-  const today = new Date().toISOString().split('T')[0];
   const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 
   // If last active was before yesterday, reset streak

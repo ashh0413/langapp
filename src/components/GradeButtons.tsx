@@ -31,9 +31,9 @@ export function GradeButtons({ onGrade, disabled = false }: GradeButtonsProps) {
           className={`
             flex flex-col items-center justify-center
             py-4 px-2 rounded-2xl
-            bg-white border-2 border-[#E5E5EA]
+            bg-[var(--bg-secondary)] border border-[var(--border)]
             transition-all duration-200
-            ${disabled ? 'opacity-50 cursor-not-allowed' : 'active:scale-95 hover:border-[#007AFF]'}
+            ${disabled ? 'opacity-50 cursor-not-allowed' : 'active:scale-95 hover:border-[var(--accent)]'}
           `}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export function GradeButtons({ onGrade, disabled = false }: GradeButtonsProps) {
           >
             {grade.label}
           </span>
-          <span className="text-xs text-[#8E8E93]">
+          <span className="text-xs text-[var(--text-tertiary)]">
             {grade.sublabel}
           </span>
         </motion.button>

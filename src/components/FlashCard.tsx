@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AudioButton } from './AudioButton';
 import type { VocabWord } from '@/data/vocabulary';
@@ -12,9 +11,14 @@ interface FlashCardProps {
 }
 
 export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
-  // Pick a random sentence for variety
-  const sentenceIndex = Math.floor(Math.random() * word.sentences.length);
-  const sentence = word.sentences[sentenceIndex];
+  const sentenceIndex = Array.from(word.id).reduce(
+    (total, character) => total + character.charCodeAt(0),
+    0,
+  ) % word.sentences.length;
+  const sentence = word.sentences[sentenceIndex] ?? {
+    french: word.french,
+    english: word.english,
+  };
 
   return (
     <motion.div
@@ -25,9 +29,9 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
       {/* Card Container */}
       <motion.div
         className={`
-          relative min-h-[280px] rounded-3xl p-8 shadow-lg
-          bg-white border border-[#E5E5EA]
-          ${isRevealed ? 'ring-2 ring-[#007AFF]' : ''}
+          relative min-h-[280px] rounded-3xl p-7
+          bg-[var(--bg-secondary)] border border-[var(--border)]
+          ${isRevealed ? 'ring-2 ring-[var(--accent)]' : ''}
         `}
         onClick={!isRevealed ? onReveal : undefined}
         whileTap={!isRevealed ? { scale: 0.98 } : {}}
@@ -35,17 +39,17 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
       >
         {/* Category Badge */}
         <div className="flex items-center gap-2 mb-6">
-          <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#F2F2F7] text-[#8E8E93] capitalize">
+          <span className="px-3 py-1 text-xs font-medium rounded-full bg-[var(--bg-tertiary)] text-[var(--text-tertiary)] capitalize">
             {word.category}
           </span>
-          <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#F2F2F7] text-[#8E8E93]">
+          <span className="px-3 py-1 text-xs font-medium rounded-full bg-[var(--bg-tertiary)] text-[var(--text-tertiary)]">
             {word.partOfSpeech}
           </span>
         </div>
 
         {/* French Sentence - Always Visible */}
         <div className="mb-6">
-          <p className="text-2xl font-serif leading-relaxed text-[#1C1C1E]">
+          <p className="text-2xl font-serif leading-relaxed text-[var(--text-primary)]">
             {sentence.french}
           </p>
         </div>
@@ -53,11 +57,11 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
         {/* Audio Button */}
         <div className="flex items-center gap-3 mb-6">
           <AudioButton text={sentence.french} size="md" />
-          <span className="text-sm text-[#8E8E93]">Tap to listen</span>
+          <span className="text-sm text-[var(--text-tertiary)]">Tap to listen</span>
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-[#E5E5EA] mb-6" />
+        <div className="h-px bg-[var(--border)] mb-6" />
 
         {/* Translation - Revealed on Tap */}
         <AnimatePresence mode="wait">
@@ -70,14 +74,14 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
               transition={{ duration: 0.2 }}
               className="space-y-4"
             >
-              <p className="text-xl leading-relaxed text-[#3C3C43]">
+              <p className="text-xl leading-relaxed text-[var(--text-secondary)]">
                 {sentence.english}
               </p>
 
               {/* Word Reference */}
-              <div className="pt-4 border-t border-[#E5E5EA]">
-                <p className="text-sm text-[#8E8E93] mb-1">Word:</p>
-                <p className="text-lg font-medium text-[#1C1C1E]">
+              <div className="pt-4 border-t border-[var(--border)]">
+                <p className="text-sm text-[var(--text-tertiary)] mb-1">Word:</p>
+                <p className="text-lg font-medium text-[var(--text-primary)]">
                   {word.french} — {word.english}
                 </p>
               </div>
@@ -90,13 +94,13 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
               exit={{ opacity: 0 }}
               className="flex flex-col items-center justify-center py-8"
             >
-              <div className="w-12 h-12 rounded-full bg-[#007AFF]/10 flex items-center justify-center mb-3">
-                <svg className="w-6 h-6 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-12 h-12 rounded-full bg-[var(--accent-bg)] flex items-center justify-center mb-3">
+                <svg className="w-6 h-6 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <p className="text-[#8E8E93] text-sm">Tap to reveal translation</p>
+              <p className="text-[var(--text-tertiary)] text-sm">Tap to reveal translation</p>
             </motion.div>
           )}
         </AnimatePresence>

@@ -1,10 +1,19 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
-import type { VocabWord } from '@/data/vocabulary';
-import type { ReviewSession, GradeQuality } from '@/types';
-import { calculateNextReview, createReviewRecord, getDueWords, getMasteryLevel } from '@/lib/srs';
+import { vocabulary, type VocabWord } from '@/data/vocabulary';
+import type { GradeQuality } from '@/types';
+import { calculateNextReview, createReviewRecord, getDueWords } from '@/lib/srs';
 import { saveReviewRecord, loadReviewRecords, saveUserStats, loadUserStats } from '@/lib/storage';
+
+interface ReviewSession {
+  words: VocabWord[];
+  currentIndex: number;
+  isRevealed: boolean;
+  isComplete: boolean;
+  correctCount: number;
+  incorrectCount: number;
+}
 
 interface UseReviewSessionReturn {
   session: ReviewSession | null;
@@ -27,53 +36,49 @@ export function useReviewSession(): UseReviewSessionReturn {
 
   // Load stats on mount
   useEffect(() => {
-    const records = loadReviewRecords();
-    const userStats = loadUserStats();
+    const timeoutId = window.setTimeout(() => {
+      const records = loadReviewRecords();
+      const userStats = loadUserStats();
+      const dueWords = getDueWords(vocabulary, records);
 
-    const dueWords = getDueWords([], records);
+      setStats({
+        dueCount: dueWords.length,
+        learnedCount: Object.keys(records).length,
+        streakDays: userStats.streakDays,
+      });
+      setIsLoading(false);
+    }, 0);
 
-    setStats({
-      dueCount: dueWords.length,
-      learnedCount: Object.keys(records).length,
-      streakDays: userStats.streakDays,
-    });
-    setIsLoading(false);
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   const startSession = useCallback((mode: 'review' | 'learn') => {
     setIsLoading(true);
 
     const records = loadReviewRecords();
-    const allWords: VocabWord[] = [];
+    let sessionWords: VocabWord[];
 
-    // Import vocabulary dynamically to avoid circular deps
-    import('@/data/vocabulary').then(({ vocabulary }) => {
-      if (mode === 'review') {
-        // Get due words
-        const dueIds = getDueWords(vocabulary, records);
-        const dueWords = vocabulary.filter(w => dueIds.includes(w.id));
-        allWords.push(...dueWords);
-      } else {
-        // Learn new words
-        const learnedIds = new Set(Object.keys(records));
-        const newWords = vocabulary.filter(w => !learnedIds.has(w.id));
-        allWords.push(...newWords.slice(0, 10)); // Max 10 new words
-      }
+    if (mode === 'review') {
+      const dueIds = new Set(getDueWords(vocabulary, records));
+      sessionWords = vocabulary.filter(word => dueIds.has(word.id));
+    } else {
+      const learnedIds = new Set(Object.keys(records));
+      sessionWords = vocabulary.filter(word => !learnedIds.has(word.id)).slice(0, 10);
+    }
 
-      // Shuffle and limit
-      const shuffled = allWords.sort(() => Math.random() - 0.5);
-      const selected = shuffled.slice(0, 15); // Max 15 per session
+    const selected = [...sessionWords]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 15);
 
-      setSession({
-        words: selected,
-        currentIndex: 0,
-        isRevealed: false,
-        isComplete: false,
-        correctCount: 0,
-        incorrectCount: 0,
-      });
-      setIsLoading(false);
+    setSession({
+      words: selected,
+      currentIndex: 0,
+      isRevealed: false,
+      isComplete: selected.length === 0,
+      correctCount: 0,
+      incorrectCount: 0,
     });
+    setIsLoading(false);
   }, []);
 
   const revealCard = useCallback(() => {
@@ -91,7 +96,7 @@ export function useReviewSession(): UseReviewSessionReturn {
       const existingRecord = records[currentWord.id];
       const record = existingRecord
         ? calculateNextReview(existingRecord, quality)
-        : createReviewRecord(currentWord.id, quality);
+        : createReviewRecord(currentWord.id);
 
       // Save record
       saveReviewRecord(record);
@@ -142,7 +147,7 @@ export function useReviewSession(): UseReviewSessionReturn {
     // Refresh stats
     const records = loadReviewRecords();
     const userStats = loadUserStats();
-    const dueWords = getDueWords([], records);
+    const dueWords = getDueWords(vocabulary, records);
 
     setStats({
       dueCount: dueWords.length,

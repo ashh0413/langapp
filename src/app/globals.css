@@ -90,14 +90,14 @@
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: #000000;
-    --bg-secondary: #1C1C1E;
-    --bg-tertiary: #2C2C2E;
+    --bg-primary: #0E0E10;
+    --bg-secondary: #18181B;
+    --bg-tertiary: #232327;
     --bg-inverse: #FFFFFF;
 
     --text-primary: #FFFFFF;
-    --text-secondary: #EBEBF5;
-    --text-tertiary: #8E8E93;
+    --text-secondary: #D1D1D6;
+    --text-tertiary: #98989D;
     --text-inverse: #1C1C1E;
     --text-placeholder: #636366;
 
@@ -147,6 +147,12 @@ body {
   background-color: var(--bg-primary);
   min-height: 100vh;
   min-height: 100dvh;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
 }
 
 /* French text uses serif for elegance */

@@ -87,12 +87,13 @@ export const GRADE_LABELS: Record<GradeQuality, string> = {
 };
 
 // Tab navigation
-export type TabId = 'home' | 'learn' | 'practice' | 'progress' | 'profile';
+export type TabId = 'home' | 'learn' | 'practice' | 'progress';
 
-// Storage keys
+// localStorage keys
 export const STORAGE_KEYS = {
   REVIEW_RECORDS: 'french-app-review-records',
   USER_STATS: 'french-app-user-stats',
+  SETTINGS: 'french-app-settings',
   THEME: 'french-app-theme',
   AUDIO_CACHE: 'french-app-audio-cache',
 } as const;

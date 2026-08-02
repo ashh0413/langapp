@@ -53,16 +53,6 @@ const tabs: Tab[] = [
       </svg>
     ),
   },
-  {
-    id: 'profile',
-    label: 'Profile',
-    href: '/profile',
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-      </svg>
-    ),
-  },
 ];
 
 export function BottomNav() {
@@ -74,7 +64,7 @@ export function BottomNav() {
   };
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#E5E5EA] px-4 pb-6 pt-2 safe-area-inset-bottom">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--bg-primary)] border-t border-[var(--border)] px-4 pb-4 pt-2 safe-area-inset-bottom">
       <div className="max-w-md mx-auto">
         <div className="flex items-center justify-around">
           {tabs.map((tab) => {
@@ -86,16 +76,16 @@ export function BottomNav() {
                 href={tab.href}
                 className={`
                   flex flex-col items-center gap-1
-                  min-w-[64px] py-1
+                  flex-1 min-w-0 py-1
                   transition-colors duration-200
-                  ${active ? 'text-[#007AFF]' : 'text-[#8E8E93]'}
+                  ${active ? 'text-[var(--accent)]' : 'text-[var(--text-tertiary)]'}
                 `}
               >
                 <div className="relative">
                   {active && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-[#007AFF]/10 rounded-xl"
+                      className="absolute inset-0 bg-[var(--accent-bg)] rounded-xl"
                       transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                     />
                   )}
@@ -103,7 +93,7 @@ export function BottomNav() {
                     {tab.icon}
                   </div>
                 </div>
-                <span className={`text-xs font-medium ${active ? 'text-[#007AFF]' : ''}`}>
+                <span className={`text-xs font-medium ${active ? 'text-[var(--accent)]' : ''}`}>
                   {tab.label}
                 </span>
               </Link>

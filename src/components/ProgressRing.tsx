@@ -6,7 +6,7 @@ interface ProgressRingProps {
   progress: number; // 0 to 100
   size?: number;
   strokeWidth?: number;
-  color?: 'blue' | 'green' | 'purple' | 'orange';
+  color?: 'blue' | 'green' | 'purple' | 'orange' | 'white';
   showLabel?: boolean;
   className?: string;
 }
@@ -16,6 +16,7 @@ const colorMap = {
   green: '#34C759',
   purple: '#AF52DE',
   orange: '#FF9F0A',
+  white: '#FFFFFF',
 };
 
 export function ProgressRing({
@@ -39,7 +40,7 @@ export function ProgressRing({
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="#E5E5EA"
+          stroke={color === 'white' ? 'rgba(255, 255, 255, 0.35)' : 'var(--border-strong)'}
           strokeWidth={strokeWidth}
         />
         {/* Progress Circle */}
@@ -60,7 +61,7 @@ export function ProgressRing({
       {/* Center Label */}
       {showLabel && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-sm font-semibold text-[#1C1C1E]">
+          <span className="text-sm font-semibold text-[var(--text-primary)]">
             {Math.round(progress)}%
           </span>
         </div>

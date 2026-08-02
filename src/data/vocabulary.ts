@@ -22,6 +22,8 @@ export interface VocabWord {
 // VOCABULARY DATA
 // ============================================
 
+import { vocabularyExtra } from './vocabulary-extra';
+
 export const vocabulary: VocabWord[] = [
   // ============================================
   // GREETINGS & BASICS
@@ -158,7 +160,7 @@ export const vocabulary: VocabWord[] = [
     category: 'food',
     sentences: [
       { french: "J'ai soif après la course.", english: "I'm thirsty after the run." },
-      { french: "Il a toujours soif en ét��.", english: "He's always thirsty in summer." },
+      { french: "Il a toujours soif en été.", english: "He's always thirsty in summer." },
     ],
   },
   // ============================================
@@ -1403,7 +1405,7 @@ export const vocabulary: VocabWord[] = [
     partOfSpeech: 'pronoun',
     category: 'basics',
     sentences: [
-      { french: 'Tu parles bien fran��ais.', english: 'You speak French well.' },
+      { french: 'Tu parles bien français.', english: 'You speak French well.' },
       { french: 'Comment tu t\'appelles ?', english: 'What is your name?' },
     ],
   },
@@ -1743,7 +1745,7 @@ export const vocabulary: VocabWord[] = [
       { french: 'Ce magasin vend des vêtements.', english: 'This store sells clothes.' },
     ],
   },
-  {
-    id: 'v148',
-    french: 'le magasi
-... [truncated for context limit]
+  ...vocabularyExtra,
+];
+
+export const VOCABULARY_COUNT = vocabulary.length;

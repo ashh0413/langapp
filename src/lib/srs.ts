@@ -45,7 +45,7 @@ export function calculateNextReview(
   quality: number
 ): ReviewRecord {
   const now = new Date();
-  let { easeFactor, interval, repetitions } = record;
+  const { easeFactor, interval, repetitions } = record;
 
   // Update ease factor based on quality
   // EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
@@ -114,8 +114,19 @@ export function isDueForReview(record: ReviewRecord): boolean {
 /**
  * Get words due for review from a list of records
  */
-export function getDueWords(records: ReviewRecord[]): ReviewRecord[] {
-  return records.filter(isDueForReview);
+export function getDueWords(
+  vocabulary: { id: string }[],
+  records: Record<string, ReviewRecord>
+): string[] {
+  const today = new Date().toISOString().split('T')[0];
+
+  return vocabulary
+    .map(w => w.id)
+    .filter(wordId => {
+      const record = records[wordId];
+      if (!record) return false;
+      return record.nextReviewDate <= today;
+    });
 }
 
 /**
@@ -137,7 +148,8 @@ export function mapActionToQuality(action: 'again' | 'hard' | 'good' | 'easy'): 
 /**
  * Calculate mastery level based on repetitions and ease factor
  */
-export function getMasteryLevel(record: ReviewRecord): 'new' | 'learning' | 'reviewing' | 'mastered' {
+export function getMasteryLevel(record?: ReviewRecord): 'new' | 'learning' | 'reviewing' | 'mastered' {
+  if (!record) return 'new';
   if (record.repetitions === 0) return 'new';
   if (record.repetitions < 3) return 'learning';
   if (record.interval >= 21) return 'mastered';

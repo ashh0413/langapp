@@ -10,23 +10,22 @@ import { useEffect, useState } from 'react';
 
 export default function HomePage() {
   const [stats, setStats] = useState({ wordsLearned: 0, streak: 0, dueToday: 0 });
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Load user stats
-    const userStats = loadUserStats();
-    const records = loadReviewRecords();
-    const today = new Date().toISOString().split('T')[0];
+    const timeoutId = window.setTimeout(() => {
+      const userStats = loadUserStats();
+      const records = loadReviewRecords();
+      const today = new Date().toISOString().split('T')[0];
+      const dueCount = Object.values(records).filter(record => record.nextReviewDate <= today).length;
 
-    // Calculate due words
-    const dueCount = Object.values(records).filter(r => r.nextReviewDate <= today).length;
+      setStats({
+        wordsLearned: Object.keys(records).length,
+        streak: userStats.streakDays,
+        dueToday: dueCount,
+      });
+    }, 0);
 
-    setStats({
-      wordsLearned: Object.keys(records).length,
-      streak: userStats.streakDays,
-      dueToday: dueCount,
-    });
-    setIsLoading(false);
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   // Calculate progress percentage
@@ -34,7 +33,7 @@ export default function HomePage() {
   const progressPercent = totalWords > 0 ? (stats.wordsLearned / totalWords) * 100 : 0;
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] pb-24">
+    <div className="app-shell min-h-screen bg-[var(--bg-primary)] pb-24">
       {/* Header */}
       <header className="px-6 pt-12 pb-6">
         <motion.div
@@ -138,7 +137,7 @@ export default function HomePage() {
 
           <Link
             href="/learn"
-            className="flex items-center gap-4 bg-white border border-[var(--border)] rounded-2xl p-4 hover:border-[var(--accent)] transition-colors"
+            className="flex items-center gap-4 bg-[var(--bg-secondary)] border border-[var(--border)] rounded-2xl p-4 hover:border-[var(--accent)] transition-colors"
           >
             <div className="w-12 h-12 rounded-xl bg-[var(--accent-bg)] flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -156,7 +155,7 @@ export default function HomePage() {
 
           <Link
             href="/review"
-            className="flex items-center gap-4 bg-white border border-[var(--border)] rounded-2xl p-4 hover:border-[var(--accent)] transition-colors"
+            className="flex items-center gap-4 bg-[var(--bg-secondary)] border border-[var(--border)] rounded-2xl p-4 hover:border-[var(--accent)] transition-colors"
           >
             <div className="w-12 h-12 rounded-xl bg-[var(--success-bg)] flex items-center justify-center shrink-0">
               <svg className="w-6 h-6 text-[var(--success)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -176,7 +175,7 @@ export default function HomePage() {
         </motion.div>
       </main>
 
-      <BottomNav activeTab="home" />
+      <BottomNav />
     </div>
   );
 }
