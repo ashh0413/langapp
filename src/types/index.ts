@@ -75,15 +75,23 @@ export interface ReviewSession {
   incorrectCount: number;
 }
 
-// Grade quality for SM-2
-export type GradeQuality = 1 | 2 | 3 | 4 | 5;
+// Grade quality (UI domain: 1-4)
+// SM-2 algorithm internally uses 0-5, mapped via GRADE_TO_SM2
+export type GradeQuality = 1 | 2 | 3 | 4;
 
 export const GRADE_LABELS: Record<GradeQuality, string> = {
   1: 'Again',
   2: 'Hard',
   3: 'Good',
   4: 'Easy',
-  5: 'Easy', // Same as 4 for simplicity
+};
+
+// Map UI grade (1-4) to SM-2 quality (0-5)
+export const GRADE_TO_SM2: Record<GradeQuality, number> = {
+  1: 1, // Again  → SM-2 1 (wrong)
+  2: 2, // Hard   → SM-2 2 (wrong but easy recall)
+  3: 4, // Good   → SM-2 4 (correct with hesitation)
+  4: 5, // Easy   → SM-2 5 (perfect)
 };
 
 // Tab navigation

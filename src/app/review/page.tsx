@@ -12,6 +12,7 @@ import { loadReviewRecords, saveReviewRecord, saveUserStats, loadUserStats } fro
 import { calculateNextReview, createReviewRecord, getDueWords, getMasteryLevel } from '@/lib/srs';
 import type { VocabWord } from '@/data/vocabulary';
 import type { GradeQuality, MasteryLevel } from '@/types';
+import { GRADE_TO_SM2 } from '@/types';
 
 type SessionState = 'loading' | 'ready' | 'reviewing' | 'complete';
 
@@ -59,9 +60,9 @@ export default function ReviewPage() {
     const records = loadReviewRecords();
     const existingRecord = records[word.id];
 
-    // Calculate next review
+    // Calculate next review (convert UI grade to SM-2 quality)
     const currentRecord = existingRecord || createReviewRecord(word.id);
-    const updatedRecord = calculateNextReview(currentRecord, quality);
+    const updatedRecord = calculateNextReview(currentRecord, GRADE_TO_SM2[quality]);
 
     // Save the updated record
     saveReviewRecord(updatedRecord);

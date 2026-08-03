@@ -11,10 +11,7 @@ interface FlashCardProps {
 }
 
 export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
-  const sentenceIndex = Array.from(word.id).reduce(
-    (total, character) => total + character.charCodeAt(0),
-    0,
-  ) % word.sentences.length;
+  const sentenceIndex = (parseInt(word.id.replace('v', ''), 10) - 1) % word.sentences.length;
   const sentence = word.sentences[sentenceIndex] ?? {
     french: word.french,
     english: word.english,

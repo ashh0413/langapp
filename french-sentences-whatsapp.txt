@@ -1,0 +1,1205 @@
+FRENCH SENTENCES WITH ENGLISH TRANSLATIONS
+==========================================
+
+Total vocabulary words: 200
+Total sentence pairs: 400
+
+1. bonjour ? hello, good morning
+   1. FR: Bonjour, comment allez-vous ?
+      EN: Hello, how are you?
+   2. FR: Bonjour ! Je m'appelle Marie.
+      EN: Hello! My name is Marie.
+
+2. merci ? thank you
+   3. FR: Merci beaucoup pour votre aide.
+      EN: Thank you very much for your help.
+   4. FR: Merci, c'est très gentil.
+      EN: Thanks, that's very kind.
+
+3. s'il vous plaît ? please (formal)
+   5. FR: Puis-je avoir un café, s'il vous plaît ?
+      EN: Can I have a coffee, please?
+   6. FR: Ouvrez la porte, s'il vous plaît.
+      EN: Open the door, please.
+
+4. au revoir ? goodbye
+   7. FR: Au revoir et à bientôt !
+      EN: Goodbye and see you soon!
+   8. FR: Au revoir, bonne soirée.
+      EN: Goodbye, have a nice evening.
+
+5. oui ? yes
+   9. FR: Oui, je comprends très bien.
+      EN: Yes, I understand very well.
+   10. FR: Oui, c'est exactement ça.
+      EN: Yes, that's exactly right.
+
+6. non ? no
+   11. FR: Non, merci. Je n'ai pas faim.
+      EN: No, thank you. I'm not hungry.
+   12. FR: Non, je ne parle pas anglais.
+      EN: No, I don't speak English.
+
+7. salut ? hi, bye (informal)
+   13. FR: Salut, ça va ?
+      EN: Hi, how's it going?
+   14. FR: Salut ! On se voit demain.
+      EN: Hi! See you tomorrow.
+
+8. pardon ? excuse me, sorry
+   15. FR: Pardon, où est la gare ?
+      EN: Excuse me, where is the train station?
+   16. FR: Pardon, je suis en retard.
+      EN: Sorry, I'm running late.
+
+9. être ? to be
+   17. FR: Je suis étudiant en français.
+      EN: I am a student of French.
+   18. FR: Nous sommes contents de vous voir.
+      EN: We are happy to see you.
+
+10. avoir ? to have
+   19. FR: J'ai un rendez-vous à midi.
+      EN: I have an appointment at noon.
+   20. FR: Elle a deux enfants.
+      EN: She has two children.
+
+11. avoir faim ? to be hungry
+   21. FR: J'ai très faim ce matin.
+      EN: I'm very hungry this morning.
+   22. FR: Tu as faim ? On peut manger.
+      EN: Are you hungry? We can eat.
+
+12. avoir soif ? to be thirsty
+   23. FR: J'ai soif après la course.
+      EN: I'm thirsty after the run.
+   24. FR: Il a toujours soif en été.
+      EN: He's always thirsty in summer.
+
+13. faire ? to do, to make
+   25. FR: Je fais mes devoirs chaque soir.
+      EN: I do my homework every evening.
+   26. FR: Nous faisons la cuisine ensemble.
+      EN: We cook together.
+
+14. pouvoir ? to be able to, can
+   27. FR: Est-ce que je peux vous aider ?
+      EN: Can I help you?
+   28. FR: Je peux parler un peu français.
+      EN: I can speak a little French.
+
+15. vouloir ? to want
+   29. FR: Je veux apprendre le français.
+      EN: I want to learn French.
+   30. FR: Que voulez-vous manger ?
+      EN: What do you want to eat?
+
+16. savoir ? to know (facts)
+   31. FR: Je sais où est la bibliothèque.
+      EN: I know where the library is.
+   32. FR: Je ne sais pas la réponse.
+      EN: I don't know the answer.
+
+17. aller ? to go
+   33. FR: Nous allons au marché demain.
+      EN: We are going to the market tomorrow.
+   34. FR: Je vais au travail en métro.
+      EN: I go to work by metro.
+
+18. venir ? to come
+   35. FR: Il vient de Paris ce soir.
+      EN: He's coming from Paris tonight.
+   36. FR: Venez à la fête demain !
+      EN: Come to the party tomorrow!
+
+19. manger ? to eat
+   37. FR: Nous mangeons au restaurant ce soir.
+      EN: We are eating at the restaurant tonight.
+   38. FR: Je mange une pomme chaque matin.
+      EN: I eat an apple every morning.
+
+20. boire ? to drink
+   39. FR: Je bois un café chaque matin.
+      EN: I drink a coffee every morning.
+   40. FR: Qu'est-ce que vous voulez boire ?
+      EN: What would you like to drink?
+
+21. parler ? to speak, to talk
+   41. FR: Je parle français un peu.
+      EN: I speak French a little.
+   42. FR: Il parle très vite.
+      EN: He speaks very fast.
+
+22. comprendre ? to understand
+   43. FR: Je comprends maintenant.
+      EN: I understand now.
+   44. FR: Vous comprenez la question ?
+      EN: Do you understand the question?
+
+23. voir ? to see
+   45. FR: Je vois la tour Eiffel de ma fenêtre.
+      EN: I see the Eiffel Tower from my window.
+   46. FR: On se voit demain ?
+      EN: Shall we meet tomorrow?
+
+24. savoir ? to know (how to)
+   47. FR: Je sais nager.
+      EN: I know how to swim.
+   48. FR: Elle sait jouer du piano.
+      EN: She can play the piano.
+
+25. prendre ? to take, to have (food/drink)
+   49. FR: Je prends le bus pour aller au travail.
+      EN: I take the bus to go to work.
+   50. FR: Il prend un café le matin.
+      EN: He has a coffee in the morning.
+
+26. mettre ? to put, to place
+   51. FR: Mets le livre sur la table.
+      EN: Put the book on the table.
+   52. FR: Je me mets à côté de la fenêtre.
+      EN: I sit next to the window.
+
+27. donner ? to give
+   53. FR: Donne-moi ton numéro de téléphone.
+      EN: Give me your phone number.
+   54. FR: Il donne des cours de maths.
+      EN: He gives math lessons.
+
+28. écrire ? to write
+   55. FR: J'écris une lettre à mes parents.
+      EN: I'm writing a letter to my parents.
+   56. FR: Elle écrit dans son journal chaque soir.
+      EN: She writes in her journal every evening.
+
+29. lire ? to read
+   57. FR: Je lis un livre avant de dormir.
+      EN: I read a book before sleeping.
+   58. FR: Il lit les nouvelles chaque matin.
+      EN: He reads the news every morning.
+
+30. dire ? to say, to tell
+   59. FR: Dis-moi la vérité.
+      EN: Tell me the truth.
+   60. FR: Que dit cette phrase ?
+      EN: What does this sentence say?
+
+31. l'homme ? man
+   61. FR: L'homme porte un costume noir.
+      EN: The man is wearing a black suit.
+   62. FR: Cet homme est mon père.
+      EN: This man is my father.
+
+32. la femme ? woman
+   63. FR: La femme lit un livre.
+      EN: The woman is reading a book.
+   64. FR: Cette femme est médecin.
+      EN: This woman is a doctor.
+
+33. l'enfant ? child
+   65. FR: L'enfant joue dans le jardin.
+      EN: The child is playing in the garden.
+   66. FR: J'ai deux enfants.
+      EN: I have two children.
+
+34. l'ami ? friend
+   67. FR: C'est mon meilleur ami.
+      EN: He is my best friend.
+   68. FR: Mon ami parle français.
+      EN: My friend speaks French.
+
+35. la maison ? house, home
+   69. FR: Ma maison est grande.
+      EN: My house is big.
+   70. FR: Je rentre à la maison.
+      EN: I'm going home.
+
+36. l'école ? school
+   71. FR: Les enfants vont à l'école.
+      EN: The children go to school.
+   72. FR: J'étudie à l'école de français.
+      EN: I'm studying at the French school.
+
+37. le travail ? work, job
+   73. FR: Je cherche du travail.
+      EN: I'm looking for work.
+   74. FR: Il aime son travail.
+      EN: He likes his job.
+
+38. la ville ? city, town
+   75. FR: Paris est une belle ville.
+      EN: Paris is a beautiful city.
+   76. FR: Je visite la ville demain.
+      EN: I'm visiting the city tomorrow.
+
+39. le pays ? country
+   77. FR: La France est un beau pays.
+      EN: France is a beautiful country.
+   78. FR: J'aime ce pays.
+      EN: I love this country.
+
+40. la rue ? street
+   79. FR: La rue est très longue.
+      EN: The street is very long.
+   80. FR: J'habite dans cette rue.
+      EN: I live on this street.
+
+41. le pain ? bread
+   81. FR: Je mange du pain avec du beurre.
+      EN: I eat bread with butter.
+   82. FR: Le pain est frais ce matin.
+      EN: The bread is fresh this morning.
+
+42. l'eau ? water
+   83. FR: J'ai besoin d'eau.
+      EN: I need water.
+   84. FR: L'eau est froide.
+      EN: The water is cold.
+
+43. le café ? coffee
+   85. FR: Je bois un café chaque matin.
+      EN: I drink a coffee every morning.
+   86. FR: Un café, s'il vous plaît.
+      EN: A coffee, please.
+
+44. le vin ? wine
+   87. FR: Le vin rouge est excellent.
+      EN: The red wine is excellent.
+   88. FR: J'aime le vin français.
+      EN: I like French wine.
+
+45. le fromage ? cheese
+   89. FR: Le fromage français est célèbre.
+      EN: French cheese is famous.
+   90. FR: Je mange du fromage avec du pain.
+      EN: I eat cheese with bread.
+
+46. la pommes ? apple
+   91. FR: Je mange une pomme par jour.
+      EN: I eat an apple a day.
+   92. FR: Les pommes sont rouges.
+      EN: The apples are red.
+
+47. le restaurants ? restaurant
+   93. FR: Allons au restaurant ce soir.
+      EN: Let's go to the restaurant tonight.
+   94. FR: Ce restaurant est très bon.
+      EN: This restaurant is very good.
+
+48. le petit déjeuner ? breakfast
+   95. FR: Je prends le petit déjeuner à huit heures.
+      EN: I have breakfast at eight o'clock.
+   96. FR: Qu'est-ce que tu manges au petit déjeuner ?
+      EN: What do you eat for breakfast?
+
+49. le dîner ? dinner
+   97. FR: Le dîner est à sept heures.
+      EN: Dinner is at seven o'clock.
+   98. FR: Nous dînons ensemble chaque jour.
+      EN: We have dinner together every day.
+
+50. la carte ? menu, map, card
+   99. FR: Je peux voir la carte, s'il vous plaît ?
+      EN: Can I see the menu, please?
+   100. FR: La carte de France.
+      EN: The map of France.
+
+51. aujourd'hui ? today
+   101. FR: Aujourd'hui, je reste à la maison.
+      EN: Today, I'm staying home.
+   102. FR: Aujourd'hui est un beau jour.
+      EN: Today is a beautiful day.
+
+52. demain ? tomorrow
+   103. FR: Demain, je voyage à Paris.
+      EN: Tomorrow, I'm traveling to Paris.
+   104. FR: À demain !
+      EN: See you tomorrow!
+
+53. hier ? yesterday
+   105. FR: Hier, il a plu.
+      EN: Yesterday, it rained.
+   106. FR: Je l'ai vu hier.
+      EN: I saw him yesterday.
+
+54. maintenant ? now
+   107. FR: Je suis disponible maintenant.
+      EN: I am available now.
+   108. FR: Maintenant, je comprends.
+      EN: Now, I understand.
+
+55. toujours ? always
+   109. FR: Il est toujours à l'heure.
+      EN: He is always on time.
+   110. FR: Je t'aime toujours.
+      EN: I still love you.
+
+56. jamais ? never
+   111. FR: Je ne mens jamais.
+      EN: I never lie.
+   112. FR: Vous n'êtes jamais en retard.
+      EN: You're never late.
+
+57. souvent ? often
+   113. FR: Je vais souvent au cinéma.
+      EN: I often go to the cinema.
+   114. FR: Il mange souvent au restaurant.
+      EN: He often eats at the restaurant.
+
+58. parfois ? sometimes
+   115. FR: Parfois, je travaille le week-end.
+      EN: Sometimes, I work on weekends.
+   116. FR: Parfois, il pleut.
+      EN: Sometimes, it rains.
+
+59. le matin ? morning
+   117. FR: Je me lève tôt le matin.
+      EN: I get up early in the morning.
+   118. FR: Chaque matin, je bois du café.
+      EN: Every morning, I drink coffee.
+
+60. le soir ? evening
+   119. FR: Je regarde la télé le soir.
+      EN: I watch TV in the evening.
+   120. FR: Ce soir, nous sortons.
+      EN: Tonight, we're going out.
+
+61. l'argent ? money
+   121. FR: J'ai besoin d'argent.
+      EN: I need money.
+   122. FR: L'argent ne fait pas le bonheur.
+      EN: Money doesn't buy happiness.
+
+62. le temps ? time, weather
+   123. FR: Je n'ai pas le temps.
+      EN: I don't have time.
+   124. FR: Quel temps fait-il ?
+      EN: What's the weather like?
+
+63. la vie ? life
+   125. FR: La vie est belle.
+      EN: Life is beautiful.
+   126. FR: C'est la vie !
+      EN: That's life!
+
+64. le jour ? day
+   127. FR: Quel jour sommes-nous ?
+      EN: What day is it today?
+   128. FR: Un jour, je visitrai la France.
+      EN: One day, I will visit France.
+
+65. la semaine ? week
+   129. FR: La semaine a sept jours.
+      EN: The week has seven days.
+   130. FR: Je pars en vacances la semaine prochaine.
+      EN: I'm leaving for vacation next week.
+
+66. l'année ? year
+   131. FR: L'année passée, j'ai voyagé.
+      EN: Last year, I traveled.
+   132. FR: Bonne année !
+      EN: Happy New Year!
+
+67. avant ? before
+   133. FR: Venez avant midi.
+      EN: Come before noon.
+   134. FR: Je me lève avant le soleil.
+      EN: I wake up before the sun.
+
+68. après ? after
+   135. FR: Je travaille après le déjeuner.
+      EN: I work after lunch.
+   136. FR: Après vous !
+      EN: After you!
+
+69. pendant ? during
+   137. FR: Je lis pendant le voyage.
+      EN: I read during the trip.
+   138. FR: Il dort pendant le film.
+      EN: He sleeps during the movie.
+
+70. jusqu'à ? until
+   139. FR: Je travaille jusqu'à six heures.
+      EN: I work until six o'clock.
+   140. FR: Attendez jusqu'à demain.
+      EN: Wait until tomorrow.
+
+71. la famille ? family
+   141. FR: Ma famille habite à Lyon.
+      EN: My family lives in Lyon.
+   142. FR: La famille est importante.
+      EN: Family is important.
+
+72. la mère ? mother
+   143. FR: Ma mère cuisine très bien.
+      EN: My mother cooks very well.
+   144. FR: J'appelle ma mère chaque semaine.
+      EN: I call my mother every week.
+
+73. le père ? father
+   145. FR: Mon père travaille dans une banque.
+      EN: My father works in a bank.
+   146. FR: Je ressemble à mon père.
+      EN: I look like my father.
+
+74. le frère ? brother
+   147. FR: Mon frère est plus âgé que moi.
+      EN: My brother is older than me.
+   148. FR: Je joue au football avec mon frère.
+      EN: I play football with my brother.
+
+75. la sœur ? sister
+   149. FR: Ma sœur habite à Paris.
+      EN: My sister lives in Paris.
+   150. FR: Je vais au cinéma avec ma sœur.
+      EN: I'm going to the cinema with my sister.
+
+76. le mari ? husband
+   151. FR: Mon mari travaille beaucoup.
+      EN: My husband works a lot.
+   152. FR: Je suis mariée depuis cinq ans.
+      EN: I've been married for five years.
+
+77. la femme ? wife
+   153. FR: Ma femme est professeur.
+      EN: My wife is a teacher.
+   154. FR: Je cuisine pour ma femme.
+      EN: I cook for my wife.
+
+78. l'enfant ? child
+   155. FR: Nous avons trois enfants.
+      EN: We have three children.
+   156. FR: L'enfant joue dans le parc.
+      EN: The child is playing in the park.
+
+79. grand ? big, tall, great
+   157. FR: Paris est une grande ville.
+      EN: Paris is a big city.
+   158. FR: Il est très grand.
+      EN: He is very tall.
+
+80. petit ? small, short
+   159. FR: J'ai un petit appartement.
+      EN: I have a small apartment.
+   160. FR: Il est petit pour son âge.
+      EN: He is short for his age.
+
+81. bon ? good
+   161. FR: C'est un bon restaurant.
+      EN: It's a good restaurant.
+   162. FR: Le café est très bon.
+      EN: The coffee is very good.
+
+82. mauvais ? bad
+   163. FR: Le temps est mauvais aujourd'hui.
+      EN: The weather is bad today.
+   164. FR: Ce n'est pas mauvais.
+      EN: It's not bad.
+
+83. nouveau ? new
+   165. FR: J'ai un nouveau travail.
+      EN: I have a new job.
+   166. FR: C'est une nouvelle idée.
+      EN: It's a new idea.
+
+84. vieux ? old
+   167. FR: Ma grand-mère est très vieille.
+      EN: My grandmother is very old.
+   168. FR: C'est un vieux bâtiment.
+      EN: It's an old building.
+
+85. beau ? beautiful, handsome
+   169. FR: Paris est une belle ville.
+      EN: Paris is a beautiful city.
+   170. FR: Il est très beau.
+      EN: He is very handsome.
+
+86. joli ? pretty, nice
+   171. FR: Elle porte une robe jolie.
+      EN: She is wearing a pretty dress.
+   172. FR: C'est un joli jardin.
+      EN: It's a nice garden.
+
+87. chaud ? hot, warm
+   173. FR: Il fait très chaud aujourd'hui.
+      EN: It's very hot today.
+   174. FR: L'eau est chaude.
+      EN: The water is hot.
+
+88. froid ? cold, cool
+   175. FR: Il fait froid en hiver.
+      EN: It's cold in winter.
+   176. FR: J'ai froid.
+      EN: I'm cold.
+
+89. facile ? easy
+   177. FR: Ce exercice est facile.
+      EN: This exercise is easy.
+   178. FR: Le français est facile à apprendre.
+      EN: French is easy to learn.
+
+90. difficile ? difficult
+   179. FR: Cette question est difficile.
+      EN: This question is difficult.
+   180. FR: Le problème est difficile à résoudre.
+      EN: The problem is difficult to solve.
+
+91. content ? happy, glad
+   181. FR: Je suis content de vous voir.
+      EN: I am happy to see you.
+   182. FR: Elle est très contente.
+      EN: She is very happy.
+
+92. triste ? sad
+   183. FR: Il a l'air triste.
+      EN: He looks sad.
+   184. FR: Je suis triste quand il pleut.
+      EN: I'm sad when it rains.
+
+93. bien ? well, good
+   185. FR: Je me porte bien.
+      EN: I'm doing well.
+   186. FR: C'est très bien !
+      EN: That's very good!
+
+94. très ? very
+   187. FR: Il fait très beau.
+      EN: It's very nice weather.
+   188. FR: Je suis très content.
+      EN: I am very happy.
+
+95. aussi ? also, too
+   189. FR: Je parle français aussi.
+      EN: I speak French too.
+   190. FR: Elle est intelligente et gentille aussi.
+      EN: She is intelligent and kind too.
+
+96. encore ? again, still
+   191. FR: Encore une fois !
+      EN: One more time!
+   192. FR: Il est encore là.
+      EN: He is still there.
+
+97. plus ? more
+   193. FR: Je veux en savoir plus.
+      EN: I want to know more.
+   194. FR: C'est plus intéressant.
+      EN: It's more interesting.
+
+98. moins ? less
+   195. FR: Je mange moins le soir.
+      EN: I eat less in the evening.
+   196. FR: C'est moins cher.
+      EN: It's less expensive.
+
+99. trop ? too much
+   197. FR: C'est trop cher.
+      EN: It's too expensive.
+   198. FR: Je travaille trop.
+      EN: I work too much.
+
+100. beaucoup ? a lot, much
+   199. FR: Je t'aime beaucoup.
+      EN: I love you a lot.
+   200. FR: Il parle beaucoup.
+      EN: He talks a lot.
+
+101. qui ? who
+   201. FR: Qui est-ce ?
+      EN: Who is it?
+   202. FR: Qui veut du café ?
+      EN: Who wants coffee?
+
+102. que ? what, that
+   203. FR: Qu'est-ce que c'est ?
+      EN: What is it?
+   204. FR: Je sais qu'il vient.
+      EN: I know that he is coming.
+
+103. où ? where
+   205. FR: Où habitez-vous ?
+      EN: Where do you live?
+   206. FR: Où est la gare ?
+      EN: Where is the train station?
+
+104. quand ? when
+   207. FR: Quand partez-vous ?
+      EN: When are you leaving?
+   208. FR: Je ne sais pas quand il arrive.
+      EN: I don't know when he arrives.
+
+105. comment ? how
+   209. FR: Comment allez-vous ?
+      EN: How are you?
+   210. FR: Comment dit-on 'hello' en français ?
+      EN: How do you say 'hello' in French?
+
+106. pourquoi ? why
+   211. FR: Pourquoi pas ?
+      EN: Why not?
+   212. FR: Je me demande pourquoi.
+      EN: I wonder why.
+
+107. combien ? how much, how many
+   213. FR: Combien ça coûte ?
+      EN: How much does it cost?
+   214. FR: Combien de temps ?
+      EN: How much time?
+
+108. et ? and
+   215. FR: Le café et le pain.
+      EN: Coffee and bread.
+   216. FR: Je parle français et anglais.
+      EN: I speak French and English.
+
+109. ou ? or
+   217. FR: Café ou thé ?
+      EN: Coffee or tea?
+   218. FR: Vous pouvez attendre ou partir.
+      EN: You can wait or leave.
+
+110. mais ? but
+   219. FR: Je suis fatigué, mais je travaille.
+      EN: I'm tired, but I'm working.
+   220. FR: C'est cher, mais c'est bon.
+      EN: It's expensive, but it's good.
+
+111. avec ? with
+   221. FR: Je suis avec mes amis.
+      EN: I am with my friends.
+   222. FR: Un café avec du lait.
+      EN: A coffee with milk.
+
+112. sans ? without
+   223. FR: Je bois du café sans sucre.
+      EN: I drink coffee without sugar.
+   224. FR: Impossible sans effort.
+      EN: Impossible without effort.
+
+113. pour ? for, in order to
+   225. FR: C'est pour vous.
+      EN: It's for you.
+   226. FR: Je travaille pour vivre.
+      EN: I work to live.
+
+114. dans ? in, inside
+   227. FR: Le livre est dans le sac.
+      EN: The book is in the bag.
+   228. FR: Je vais dans la ville.
+      EN: I'm going into the city.
+
+115. sur ? on, onto
+   229. FR: Le livre est sur la table.
+      EN: The book is on the table.
+   230. FR: Il est sur la route.
+      EN: He is on the road.
+
+116. sous ? under
+   231. FR: Le chat est sous la chaise.
+      EN: The cat is under the chair.
+   232. FR: Sous la pluie.
+      EN: Under the rain.
+
+117. entre ? between, among
+   233. FR: Entrez entre les deux arbres.
+      EN: Enter between the two trees.
+   234. FR: L'amour entre deux personnes.
+      EN: The love between two people.
+
+118. je ? I
+   235. FR: Je parle français.
+      EN: I speak French.
+   236. FR: Je suis content.
+      EN: I am happy.
+
+119. tu ? you (informal)
+   237. FR: Tu parles bien français.
+      EN: You speak French well.
+   238. FR: Comment tu t'appelles ?
+      EN: What is your name?
+
+120. il ? he, it
+   239. FR: Il est français.
+      EN: He is French.
+   240. FR: Il pleut.
+      EN: It is raining.
+
+121. elle ? she, it
+   241. FR: Elle est française.
+      EN: She is French.
+   242. FR: Elle est très gentille.
+      EN: She is very kind.
+
+122. nous ? we
+   243. FR: Nous allons au cinéma.
+      EN: We're going to the cinema.
+   244. FR: Nous sommes étudiants.
+      EN: We are students.
+
+123. vous ? you (formal/plural)
+   245. FR: Vous parlez français très bien.
+      EN: You speak French very well.
+   246. FR: Comment allez-vous ?
+      EN: How are you?
+
+124. ils ? they (masculine)
+   247. FR: Ils sont français.
+      EN: They are French.
+   248. FR: Ils travaillent ensemble.
+      EN: They work together.
+
+125. elles ? they (feminine)
+   249. FR: Elles sont françaises.
+      EN: They are French.
+   250. FR: Elles aiment la musique.
+      EN: They like music.
+
+126. le livre ? book
+   251. FR: Je lis un livre.
+      EN: I am reading a book.
+   252. FR: C'est un bon livre.
+      EN: It's a good book.
+
+127. l'école ? school
+   253. FR: Les enfants vont à l'école.
+      EN: The children go to school.
+   254. FR: L'école commence à huit heures.
+      EN: School starts at eight o'clock.
+
+128. le téléphone ? telephone, phone
+   255. FR: Mon téléphone ne fonctionne pas.
+      EN: My phone is not working.
+   256. FR: Téléphonez-moi demain.
+      EN: Call me tomorrow.
+
+129. l'ordinateur ? computer
+   257. FR: J'utilise l'ordinateur pour travailler.
+      EN: I use the computer to work.
+   258. FR: L'ordinateur est sur le bureau.
+      EN: The computer is on the desk.
+
+130. la porte ? door
+   259. FR: Ouvrez la porte, s'il vous plaît.
+      EN: Open the door, please.
+   260. FR: La porte est fermée.
+      EN: The door is closed.
+
+131. la fenêtre ? window
+   261. FR: J'ouvre la fenêtre.
+      EN: I open the window.
+   262. FR: La vue de la fenêtre est belle.
+      EN: The view from the window is beautiful.
+
+132. le train ? train
+   263. FR: Je prends le train pour Paris.
+      EN: I take the train to Paris.
+   264. FR: Le train arrive à midi.
+      EN: The train arrives at noon.
+
+133. l'avion ? airplane
+   265. FR: L'avion décolle à dix heures.
+      EN: The airplane takes off at ten o'clock.
+   266. FR: Je déteste prendre l'avion.
+      EN: I hate flying.
+
+134. la ville ? city, town
+   267. FR: Paris est une grande ville.
+      EN: Paris is a big city.
+   268. FR: Je visite la ville.
+      EN: I'm visiting the city.
+
+135. le pays ? country
+   269. FR: La France est un beau pays.
+      EN: France is a beautiful country.
+   270. FR: C'est mon pays natal.
+      EN: It's my home country.
+
+136. travailler ? to work
+   271. FR: Je travaille dans un bureau.
+      EN: I work in an office.
+   272. FR: Il travaille dur.
+      EN: He works hard.
+
+137. apprendre ? to learn
+   273. FR: J'apprends le français.
+      EN: I'm learning French.
+   274. FR: C'est important d'apprendre.
+      EN: It is important to learn.
+
+138. étudier ? to study
+   275. FR: J'étudie à l'université.
+      EN: I'm studying at the university.
+   276. FR: Étudiez le français chaque jour.
+      EN: Study French every day.
+
+139. le métier ? profession, job
+   277. FR: Quel est votre métier ?
+      EN: What is your profession?
+   278. FR: C'est un métier difficile.
+      EN: It's a difficult job.
+
+140. le patron ? boss
+   279. FR: Mon patron est gentil.
+      EN: My boss is nice.
+   280. FR: Je parle au patron.
+      EN: I'm talking to the boss.
+
+141. voyager ? to travel
+   281. FR: J'aime voyager.
+      EN: I like to travel.
+   282. FR: Nous voyageons beaucoup.
+      EN: We travel a lot.
+
+142. l'hôtel ? hotel
+   283. FR: L'hôtel est complet.
+      EN: The hotel is full.
+   284. FR: Je réserve une chambre d'hôtel.
+      EN: I book a hotel room.
+
+143. le passeport ? passport
+   285. FR: J'ai besoin de mon passeport.
+      EN: I need my passport.
+   286. FR: Le passeport est dans le sac.
+      EN: The passport is in the bag.
+
+144. la valise ? suitcase
+   287. FR: Je fais ma valise.
+      EN: I'm packing my suitcase.
+   288. FR: La valise est lourde.
+      EN: The suitcase is heavy.
+
+145. l'aéroport ? airport
+   289. FR: L'avion part de l'aéroport.
+      EN: The plane leaves from the airport.
+   290. FR: J'attends à l'aéroport.
+      EN: I'm waiting at the airport.
+
+146. acheter ? to buy
+   291. FR: Je veux acheter des chaussures.
+      EN: I want to buy shoes.
+   292. FR: Où peut-on acheter du pain ?
+      EN: Where can one buy bread?
+
+147. vendre ? to sell
+   293. FR: Je vends ma voiture.
+      EN: I am selling my car.
+   294. FR: Ce magasin vend des vêtements.
+      EN: This store sells clothes.
+
+148. le magasin ? store
+   295. FR: Le magasin ouvre à neuf heures.
+      EN: The store opens at nine o’clock.
+   296. FR: Ce magasin vend des produits français.
+      EN: This store sells French products.
+
+149. le prix ? price
+   297. FR: Quel est le prix de cette veste ?
+      EN: What is the price of this jacket?
+   298. FR: Les prix sont affichés à l’entrée.
+      EN: The prices are displayed at the entrance.
+
+150. l’argent ? money
+   299. FR: Je n’ai pas assez d’argent.
+      EN: I do not have enough money.
+   300. FR: Elle économise de l’argent pour voyager.
+      EN: She is saving money to travel.
+
+151. payer ? to pay
+   301. FR: Je voudrais payer par carte.
+      EN: I would like to pay by card.
+   302. FR: Nous payons l’addition ensemble.
+      EN: We are paying the bill together.
+
+152. la monnaie ? change, currency
+   303. FR: Gardez la monnaie.
+      EN: Keep the change.
+   304. FR: Avez-vous de la monnaie ?
+      EN: Do you have any change?
+
+153. la taille ? size
+   305. FR: Quelle taille faites-vous ?
+      EN: What size are you?
+   306. FR: Cette taille me va bien.
+      EN: This size fits me well.
+
+154. le vêtement ? item of clothing
+   307. FR: Ce vêtement est confortable.
+      EN: This item of clothing is comfortable.
+   308. FR: Elle range ses vêtements.
+      EN: She puts away her clothes.
+
+155. les chaussures ? shoes
+   309. FR: Mes chaussures sont neuves.
+      EN: My shoes are new.
+   310. FR: Il enlève ses chaussures à la porte.
+      EN: He takes off his shoes at the door.
+
+156. la chemise ? shirt
+   311. FR: Il porte une chemise blanche.
+      EN: He is wearing a white shirt.
+   312. FR: Cette chemise est trop grande.
+      EN: This shirt is too big.
+
+157. le pantalon ? trousers
+   313. FR: Ce pantalon est très élégant.
+      EN: These trousers are very elegant.
+   314. FR: J’essaie un pantalon noir.
+      EN: I am trying on black trousers.
+
+158. la robe ? dress
+   315. FR: Elle choisit une robe rouge.
+      EN: She chooses a red dress.
+   316. FR: La robe est parfaite pour la fête.
+      EN: The dress is perfect for the party.
+
+159. la couleur ? color
+   317. FR: Quelle couleur préférez-vous ?
+      EN: Which color do you prefer?
+   318. FR: Cette couleur va bien avec vos yeux.
+      EN: This color goes well with your eyes.
+
+160. ouvert ? open
+   319. FR: Le café est encore ouvert.
+      EN: The café is still open.
+   320. FR: La fenêtre reste ouverte.
+      EN: The window remains open.
+
+161. fermé ? closed
+   321. FR: Le musée est fermé le lundi.
+      EN: The museum is closed on Mondays.
+   322. FR: La porte est bien fermée.
+      EN: The door is properly closed.
+
+162. le soleil ? sun
+   323. FR: Le soleil brille ce matin.
+      EN: The sun is shining this morning.
+   324. FR: Nous déjeunons au soleil.
+      EN: We are having lunch in the sun.
+
+163. la pluie ? rain
+   325. FR: La pluie commence à tomber.
+      EN: The rain is starting to fall.
+   326. FR: J’aime marcher sous la pluie.
+      EN: I like walking in the rain.
+
+164. la neige ? snow
+   327. FR: La neige couvre les montagnes.
+      EN: The snow covers the mountains.
+   328. FR: Les enfants jouent dans la neige.
+      EN: The children are playing in the snow.
+
+165. le vent ? wind
+   329. FR: Le vent souffle très fort.
+      EN: The wind is blowing very hard.
+   330. FR: Il y a beaucoup de vent près de la mer.
+      EN: It is very windy near the sea.
+
+166. chaud ? hot, warm
+   331. FR: Il fait chaud aujourd’hui.
+      EN: It is hot today.
+   332. FR: Le café est encore chaud.
+      EN: The coffee is still hot.
+
+167. froid ? cold
+   333. FR: Il fait froid dehors.
+      EN: It is cold outside.
+   334. FR: J’ai les mains froides.
+      EN: My hands are cold.
+
+168. la météo ? weather forecast
+   335. FR: Je regarde la météo avant de partir.
+      EN: I check the weather forecast before leaving.
+   336. FR: La météo annonce du soleil.
+      EN: The forecast calls for sunshine.
+
+169. la tête ? head
+   337. FR: J’ai mal à la tête.
+      EN: I have a headache.
+   338. FR: Il baisse la tête pour réfléchir.
+      EN: He lowers his head to think.
+
+170. la main ? hand
+   339. FR: Levez la main si vous avez une question.
+      EN: Raise your hand if you have a question.
+   340. FR: Elle tient son enfant par la main.
+      EN: She holds her child by the hand.
+
+171. le pied ? foot
+   341. FR: Je vais au travail à pied.
+      EN: I walk to work.
+   342. FR: Il s’est blessé au pied.
+      EN: He injured his foot.
+
+172. l’œil ? eye
+   343. FR: Elle a les yeux bleus.
+      EN: She has blue eyes.
+   344. FR: J’ai quelque chose dans l’œil.
+      EN: I have something in my eye.
+
+173. la bouche ? mouth
+   345. FR: Ouvrez la bouche, s’il vous plaît.
+      EN: Open your mouth, please.
+   346. FR: Il parle la bouche pleine.
+      EN: He talks with his mouth full.
+
+174. le cœur ? heart
+   347. FR: Son cœur bat très vite.
+      EN: Her heart is beating very fast.
+   348. FR: Paris est au cœur de la France.
+      EN: Paris is at the heart of France.
+
+175. la santé ? health
+   349. FR: Le sommeil est important pour la santé.
+      EN: Sleep is important for health.
+   350. FR: Je vous souhaite une bonne santé.
+      EN: I wish you good health.
+
+176. le médecin ? doctor
+   351. FR: Je dois prendre rendez-vous chez le médecin.
+      EN: I need to make a doctor’s appointment.
+   352. FR: Le médecin arrive dans quelques minutes.
+      EN: The doctor will arrive in a few minutes.
+
+177. la pharmacie ? pharmacy
+   353. FR: La pharmacie est au coin de la rue.
+      EN: The pharmacy is on the corner.
+   354. FR: Je vais chercher ce médicament à la pharmacie.
+      EN: I am going to get this medicine at the pharmacy.
+
+178. heureux ? happy
+   355. FR: Je suis heureux de vous revoir.
+      EN: I am happy to see you again.
+   356. FR: Ils ont l’air très heureux ensemble.
+      EN: They look very happy together.
+
+179. fatigué ? tired
+   357. FR: Je suis fatigué après cette longue journée.
+      EN: I am tired after this long day.
+   358. FR: Elle se couche tôt quand elle est fatiguée.
+      EN: She goes to bed early when she is tired.
+
+180. avoir peur ? to be afraid
+   359. FR: N’aie pas peur, je suis avec toi.
+      EN: Do not be afraid; I am with you.
+   360. FR: Il a peur de prendre l’avion.
+      EN: He is afraid of flying.
+
+181. aimer ? to like, to love
+   361. FR: J’aime écouter de la musique.
+      EN: I like listening to music.
+   362. FR: Nous aimons beaucoup cette ville.
+      EN: We really love this city.
+
+182. détester ? to hate
+   363. FR: Je déteste attendre sous la pluie.
+      EN: I hate waiting in the rain.
+   364. FR: Elle déteste se lever tôt.
+      EN: She hates getting up early.
+
+183. penser ? to think
+   365. FR: Je pense souvent à mes amis.
+      EN: I often think about my friends.
+   366. FR: Que pensez-vous de cette idée ?
+      EN: What do you think of this idea?
+
+184. croire ? to believe
+   367. FR: Je crois que vous avez raison.
+      EN: I believe you are right.
+   368. FR: Elle ne croit pas cette histoire.
+      EN: She does not believe this story.
+
+185. le travail ? work
+   369. FR: Je commence le travail à huit heures.
+      EN: I start work at eight o’clock.
+   370. FR: Ce travail demande beaucoup de patience.
+      EN: This work requires a lot of patience.
+
+186. le bureau ? office, desk
+   371. FR: Mon bureau est au deuxième étage.
+      EN: My office is on the second floor.
+   372. FR: Les documents sont sur le bureau.
+      EN: The documents are on the desk.
+
+187. le collègue ? colleague
+   373. FR: Ma collègue m’aide avec ce dossier.
+      EN: My colleague is helping me with this file.
+   374. FR: Nous déjeunons avec nos collègues.
+      EN: We are having lunch with our colleagues.
+
+188. la réunion ? meeting
+   375. FR: La réunion commence à dix heures.
+      EN: The meeting starts at ten o’clock.
+   376. FR: Nous préparons la réunion de demain.
+      EN: We are preparing tomorrow’s meeting.
+
+189. le projet ? project
+   377. FR: Ce projet est presque terminé.
+      EN: This project is almost finished.
+   378. FR: Toute l’équipe travaille sur le projet.
+      EN: The whole team is working on the project.
+
+190. le message ? message
+   379. FR: Je vous laisse un message.
+      EN: I am leaving you a message.
+   380. FR: Avez-vous reçu mon message ?
+      EN: Did you receive my message?
+
+191. la musique ? music
+   381. FR: Cette musique me rappelle Paris.
+      EN: This music reminds me of Paris.
+   382. FR: Nous écoutons de la musique française.
+      EN: We are listening to French music.
+
+192. le film ? film, movie
+   383. FR: Ce film a gagné plusieurs prix.
+      EN: This film won several awards.
+   384. FR: On regarde un film ce soir ?
+      EN: Shall we watch a movie tonight?
+
+193. l’histoire ? story, history
+   385. FR: Mon grand-père raconte une histoire.
+      EN: My grandfather is telling a story.
+   386. FR: J’étudie l’histoire de France.
+      EN: I am studying the history of France.
+
+194. le musée ? museum
+   387. FR: Le musée présente une nouvelle exposition.
+      EN: The museum is presenting a new exhibition.
+   388. FR: Nous visitons le musée dimanche.
+      EN: We are visiting the museum on Sunday.
+
+195. la fête ? party, celebration
+   389. FR: Nous organisons une fête samedi.
+      EN: We are organizing a party on Saturday.
+   390. FR: La ville est décorée pour la fête.
+      EN: The city is decorated for the celebration.
+
+196. la question ? question
+   391. FR: Puis-je vous poser une question ?
+      EN: May I ask you a question?
+   392. FR: Cette question est difficile.
+      EN: This question is difficult.
+
+197. la réponse ? answer
+   393. FR: Je ne connais pas la réponse.
+      EN: I do not know the answer.
+   394. FR: Votre réponse est correcte.
+      EN: Your answer is correct.
+
+198. le problème ? problem
+   395. FR: Nous devons résoudre ce problème.
+      EN: We must solve this problem.
+   396. FR: Il n’y a aucun problème.
+      EN: There is no problem.
+
+199. l’idée ? idea
+   397. FR: C’est une excellente idée.
+      EN: That is an excellent idea.
+   398. FR: J’ai une idée pour le dîner.
+      EN: I have an idea for dinner.
+
+200. choisir ? to choose
+   399. FR: Vous pouvez choisir une table près de la fenêtre.
+      EN: You can choose a table near the window.
+   400. FR: Elle choisit toujours avec soin.
+      EN: She always chooses carefully.

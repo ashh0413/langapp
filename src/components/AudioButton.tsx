@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { generateAudio, isElevenLabsConfigured } from '@/lib/elevenlabs';
+import { generateAudio, revokeAudioUrl } from '@/lib/elevenlabs';
 
 interface AudioButtonProps {
   text: string;
@@ -32,15 +32,36 @@ const sizeConfig = {
 export function AudioButton({ text, size = 'md', className = '' }: AudioButtonProps) {
   const [state, setState] = useState<'idle' | 'loading' | 'playing' | 'error'>('idle');
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioUrlRef = useRef<string | null>(null);
   const currentTextRef = useRef<string>('');
 
   const config = sizeConfig[size];
 
   const handlePlay = useCallback(async () => {
+    const playBrowserSpeech = () => {
+      if (!('speechSynthesis' in window)) {
+        setState('error');
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'fr-FR';
+      utterance.rate = 0.9;
+      utterance.onstart = () => setState('playing');
+      utterance.onend = () => setState('idle');
+      utterance.onerror = () => setState('error');
+      window.speechSynthesis.speak(utterance);
+    };
+
     // If already playing this text, stop it
     if (state === 'playing' && audioRef.current) {
       audioRef.current.pause();
       audioRef.current = null;
+      if (audioUrlRef.current) {
+        revokeAudioUrl(audioUrlRef.current);
+        audioUrlRef.current = null;
+      }
       setState('idle');
       return;
     }
@@ -51,49 +72,30 @@ export function AudioButton({ text, size = 'md', className = '' }: AudioButtonPr
     setState('loading');
     currentTextRef.current = text;
 
-    // For demo purposes without API key, use Web Speech API
-    if (!isElevenLabsConfigured()) {
-      // Fallback to browser's Speech Synthesis
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'fr-FR';
-        utterance.rate = 0.9;
-
-        utterance.onstart = () => setState('playing');
-        utterance.onend = () => setState('idle');
-        utterance.onerror = () => setState('error');
-
-        speechSynthesis.speak(utterance);
-        return;
-      }
-    }
-
-    // Use ElevenLabs API
     const result = await generateAudio(text);
 
     if (result.success && result.audioUrl) {
       const audio = new Audio(result.audioUrl);
       audioRef.current = audio;
+      audioUrlRef.current = result.audioUrl;
 
       audio.onplay = () => setState('playing');
       audio.onended = () => {
         setState('idle');
-        // Clean up blob URL
-        URL.revokeObjectURL(result.audioUrl!);
+        revokeAudioUrl(result.audioUrl!);
+        audioUrlRef.current = null;
+        audioRef.current = null;
       };
-      audio.onerror = () => setState('error');
+      audio.onerror = () => {
+        revokeAudioUrl(result.audioUrl!);
+        audioUrlRef.current = null;
+        audioRef.current = null;
+        playBrowserSpeech();
+      };
 
-      audio.play();
+      await audio.play().catch(() => playBrowserSpeech());
     } else {
-      setState('error');
-      // Fallback to Web Speech API on error
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'fr-FR';
-        utterance.rate = 0.9;
-        speechSynthesis.speak(utterance);
-        setState('idle');
-      }
+      playBrowserSpeech();
     }
   }, [state, text]);
 
@@ -104,7 +106,13 @@ export function AudioButton({ text, size = 'md', className = '' }: AudioButtonPr
         audioRef.current.pause();
         audioRef.current = null;
       }
-      speechSynthesis.cancel();
+      if (audioUrlRef.current) {
+        revokeAudioUrl(audioUrlRef.current);
+        audioUrlRef.current = null;
+      }
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
     };
   }, []);
 
