@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { AudioButton } from './AudioButton';
+import { ColorizedSentence, GrammarLegend } from './ColorizedSentence';
 import type { VocabWord } from '@/data/vocabulary';
 
 interface FlashCardProps {
@@ -12,10 +13,7 @@ interface FlashCardProps {
 
 export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
   const sentenceIndex = (parseInt(word.id.replace('v', ''), 10) - 1) % word.sentences.length;
-  const sentence = word.sentences[sentenceIndex] ?? {
-    french: word.french,
-    english: word.english,
-  };
+  const sentence = word.sentences[sentenceIndex];
 
   return (
     <motion.div
@@ -46,9 +44,11 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
 
         {/* French Sentence - Always Visible */}
         <div className="mb-6">
-          <p className="text-2xl font-serif leading-relaxed text-[var(--text-primary)]">
-            {sentence.french}
-          </p>
+          <ColorizedSentence
+            sentence={sentence.french}
+            grammar={sentence.grammar}
+            size="lg"
+          />
         </div>
 
         {/* Audio Button */}
@@ -56,6 +56,8 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
           <AudioButton text={sentence.french} size="md" />
           <span className="text-sm text-[var(--text-tertiary)]">Tap to listen</span>
         </div>
+
+        <GrammarLegend collapsed className="mb-6" />
 
         {/* Divider */}
         <div className="h-px bg-[var(--border)] mb-6" />

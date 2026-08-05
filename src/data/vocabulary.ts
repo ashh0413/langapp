@@ -3,18 +3,33 @@
 // 200+ words with contextual sentences
 // ============================================
 
-export interface Sentence {
+import type { GrammarSegment } from '@/types';
+import {
+  annotateSentence,
+  createVocabularyGrammarLexicon,
+} from '@/lib/grammar';
+import { vocabularyExtra } from './vocabulary-extra';
+
+export interface SourceSentence {
   french: string;
   english: string;
 }
 
-export interface VocabWord {
+export interface Sentence extends SourceSentence {
+  grammar: GrammarSegment[];
+}
+
+export interface RawVocabWord {
   id: string;
   french: string;
   english: string;
   partOfSpeech: string;
   gender?: string;
   category: string;
+  sentences: SourceSentence[];
+}
+
+export interface VocabWord extends Omit<RawVocabWord, 'sentences'> {
   sentences: Sentence[];
 }
 
@@ -22,9 +37,7 @@ export interface VocabWord {
 // VOCABULARY DATA
 // ============================================
 
-import { vocabularyExtra } from './vocabulary-extra';
-
-export const vocabulary: VocabWord[] = [
+const rawVocabulary: RawVocabWord[] = [
   // ============================================
   // GREETINGS & BASICS
   // ============================================
@@ -1747,5 +1760,15 @@ export const vocabulary: VocabWord[] = [
   },
   ...vocabularyExtra,
 ];
+
+const grammarLexicon = createVocabularyGrammarLexicon(rawVocabulary);
+
+export const vocabulary: VocabWord[] = rawVocabulary.map(word => ({
+  ...word,
+  sentences: word.sentences.map(sentence => ({
+    ...sentence,
+    grammar: annotateSentence(sentence.french, grammarLexicon),
+  })),
+}));
 
 export const VOCABULARY_COUNT = vocabulary.length;

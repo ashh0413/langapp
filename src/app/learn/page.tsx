@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BottomNav } from '@/components/BottomNav';
 import { AudioButton } from '@/components/AudioButton';
+import { ColorizedSentence, GrammarLegend } from '@/components/ColorizedSentence';
 import { vocabulary, type VocabWord } from '@/data/vocabulary';
 import { loadReviewRecords, saveReviewRecord } from '@/lib/storage';
 import { createReviewRecord } from '@/lib/srs';
@@ -239,15 +240,20 @@ export default function LearnPage() {
                   </p>
                 </div>
 
+                <GrammarLegend collapsed className="mb-4" />
+
                 {/* Sentences */}
                 <div className="space-y-4 mb-6">
                   {currentWord.sentences.map((sentence, i) => (
                     <div key={i} className="bg-[var(--bg-tertiary)] rounded-xl p-4">
                       <div className="flex items-start gap-3 mb-2">
                         <AudioButton text={sentence.french} size="sm" />
-                        <p className="text-base text-[var(--text-primary)] flex-1">
-                          {sentence.french}
-                        </p>
+                        <ColorizedSentence
+                          sentence={sentence.french}
+                          grammar={sentence.grammar}
+                          size="sm"
+                          className="flex-1"
+                        />
                       </div>
                       {showTranslation && (
                         <p className="text-sm text-[var(--text-secondary)] pl-9">

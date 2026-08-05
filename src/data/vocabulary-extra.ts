@@ -1,6 +1,6 @@
-import type { VocabWord } from './vocabulary';
+import type { RawVocabWord } from './vocabulary';
 
-export const vocabularyExtra: VocabWord[] = [
+export const vocabularyExtra: RawVocabWord[] = [
   { id: 'v148', french: 'le magasin', english: 'store', partOfSpeech: 'noun', gender: 'm', category: 'shopping', sentences: [
     { french: 'Le magasin ouvre à neuf heures.', english: 'The store opens at nine o’clock.' },
     { french: 'Ce magasin vend des produits français.', english: 'This store sells French products.' },

@@ -26,10 +26,30 @@ export type Category =
   | 'family'
   | 'emotions';
 
-// Sentence structure with French and English
+// Grammar category types for colorization
+export type GrammarCategory =
+  | 'pronoun'
+  | 'verb'
+  | 'noun'
+  | 'adjective'
+  | 'article'
+  | 'preposition'
+  | 'adverb'
+  | 'conjunction'
+  | 'phrase'
+  | 'other';
+
+// Grammar segment with explicit annotation
+export interface GrammarSegment {
+  text: string;
+  category?: GrammarCategory;
+}
+
+// Sentence structure with French, English, and grammar annotations
 export interface Sentence {
   french: string;
   english: string;
+  grammar: GrammarSegment[];
 }
 
 // Word/Vocabulary item
