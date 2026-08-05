@@ -121,21 +121,8 @@ export default function LearnPage() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-2xl">
-                      {cat.name === 'greetings' && '👋'}
-                      {cat.name === 'courtesy' && '🙏'}
-                      {cat.name === 'basics' && '📝'}
-                      {cat.name === 'verbs' && '⚡'}
-                      {cat.name === 'food' && '🍽️'}
-                      {cat.name === 'travel' && '✈️'}
-                      {cat.name === 'daily' && '🏠'}
-                      {cat.name === 'family' && '👨‍👩‍👧'}
-                      {cat.name === 'time' && '⏰'}
-                      {cat.name === 'numbers' && '🔢'}
-                      {!['greetings', 'courtesy', 'basics', 'verbs', 'food', 'travel', 'daily', 'family', 'time', 'numbers'].includes(cat.name) && '📚'}
-                    </span>
                     {cat.learned === cat.total && (
-                      <span className="text-[var(--success)] text-sm">✓ Done</span>
+                      <span className="text-[var(--success)] text-sm">Done</span>
                     )}
                   </div>
                   <h3 className="font-semibold text-[var(--text-primary)] capitalize mb-1">
