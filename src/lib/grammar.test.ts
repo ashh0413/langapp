@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { vocabulary, VOCABULARY_COUNT } from '@/data/vocabulary';
 import {
+  alignGrammarSegments,
+  annotateEnglishSentence,
   annotateSentence,
+  classifyEnglishWord,
   classifyWord,
   getGrammarColor,
   joinGrammarSegments,
@@ -60,6 +63,61 @@ describe('French contractions', () => {
   });
 });
 
+describe('English annotations', () => {
+  it.each([
+    ["I'm ready.", ['I', "'m", ' ', 'ready', '.']],
+    ["They're here.", ['They', "'re", ' ', 'here', '.']],
+    ["I don't know.", ['I', ' ', "don't", ' ', 'know', '.']],
+  ] as const)('preserves contractions in %s', (sentence, pieces) => {
+    const grammar = annotateEnglishSentence(sentence);
+    expect(grammar.map(segment => segment.text)).toEqual(pieces);
+    expect(joinGrammarSegments(grammar)).toBe(sentence);
+  });
+
+  it('classifies common English grammar categories', () => {
+    expect(classifyEnglishWord('I')).toBe('pronoun');
+    expect(classifyEnglishWord('the')).toBe('article');
+    expect(classifyEnglishWord('with')).toBe('preposition');
+    expect(classifyEnglishWord('quickly')).toBe('adverb');
+    expect(classifyEnglishWord("don't")).toBe('verb');
+    expect(classifyEnglishWord('xyzunknown')).toBe('other');
+  });
+
+  it('supports reordered and one-to-many category alignment', () => {
+    const aligned = alignGrammarSegments(
+      [
+        { text: 'Je', category: 'pronoun' },
+        { text: ' ', category: undefined },
+        { text: 'le', category: 'pronoun' },
+        { text: ' ', category: undefined },
+        { text: 'vois', category: 'verb' },
+      ],
+      [
+        { text: 'I', category: 'pronoun' },
+        { text: ' ', category: undefined },
+        { text: 'see', category: 'verb' },
+        { text: ' ', category: undefined },
+        { text: 'it', category: 'pronoun' },
+      ]
+    );
+
+    expect(aligned.french[0].alignmentId).toBe(aligned.english[0].alignmentId);
+    expect(aligned.french[2].alignmentId).toBe(aligned.english[4].alignmentId);
+    expect(aligned.french[4].alignmentId).toBe(aligned.english[2].alignmentId);
+
+    const oneToMany = alignGrammarSegments(
+      [{ text: 'bonjour', category: 'phrase' }],
+      [
+        { text: 'good', category: 'phrase' },
+        { text: ' ', category: undefined },
+        { text: 'morning', category: 'phrase' },
+      ]
+    );
+    expect(oneToMany.english[0].alignmentId).toBe(oneToMany.french[0].alignmentId);
+    expect(oneToMany.english[2].alignmentId).toBe(oneToMany.french[0].alignmentId);
+  });
+});
+
 describe('context-sensitive grammar', () => {
   function categoryFor(sentence: string, text: string): GrammarCategory | undefined {
     return annotateSentence(sentence).find(segment => segment.text === text)?.category;
@@ -103,7 +161,7 @@ describe('vocabulary annotations', () => {
     expect(ids.at(-1)).toBe('v200');
   });
 
-  it('annotates and validates every example sentence', () => {
+  it('annotates and validates both languages in every example sentence', () => {
     const sentences = vocabulary.flatMap(word => word.sentences);
     expect(sentences).toHaveLength(400);
 
@@ -111,6 +169,9 @@ describe('vocabulary annotations', () => {
       expect(sentence.grammar.length).toBeGreaterThan(0);
       expect(validateGrammarSegments(sentence.french, sentence.grammar)).toBe(true);
       expect(joinGrammarSegments(sentence.grammar)).toBe(sentence.french);
+      expect(sentence.englishGrammar.length).toBeGreaterThan(0);
+      expect(validateGrammarSegments(sentence.english, sentence.englishGrammar)).toBe(true);
+      expect(joinGrammarSegments(sentence.englishGrammar)).toBe(sentence.english);
     });
   });
 
@@ -121,6 +182,29 @@ describe('vocabulary annotations', () => {
           const isLexical = /[\p{L}\p{N}]/u.test(segment.text);
           if (isLexical) expect(segment.category).toBeDefined();
         });
+        sentence.englishGrammar.forEach(segment => {
+          const isLexical = /[\p{L}\p{N}]/u.test(segment.text);
+          if (isLexical) expect(segment.category).toBeDefined();
+        });
+      });
+    });
+  });
+
+  it('keeps every alignment category-consistent and present in both languages', () => {
+    vocabulary.flatMap(word => word.sentences).forEach(sentence => {
+      const frenchAlignments = sentence.grammar.filter(segment => segment.alignmentId);
+      const englishAlignments = sentence.englishGrammar.filter(segment => segment.alignmentId);
+      const allIds = new Set([
+        ...frenchAlignments.map(segment => segment.alignmentId),
+        ...englishAlignments.map(segment => segment.alignmentId),
+      ]);
+
+      allIds.forEach(alignmentId => {
+        const frenchMatches = frenchAlignments.filter(segment => segment.alignmentId === alignmentId);
+        const englishMatches = englishAlignments.filter(segment => segment.alignmentId === alignmentId);
+        expect(frenchMatches.length).toBeGreaterThan(0);
+        expect(englishMatches.length).toBeGreaterThan(0);
+        expect(new Set([...frenchMatches, ...englishMatches].map(segment => segment.category)).size).toBe(1);
       });
     });
   });

@@ -13,6 +13,7 @@ import type { GrammarCategory, GrammarSegment } from '@/types';
 interface ColorizedSentenceProps {
   sentence: string;
   grammar: GrammarSegment[];
+  language?: 'fr' | 'en';
   showLabels?: boolean;
   size?: 'sm' | 'md' | 'lg';
   className?: string;
@@ -53,6 +54,7 @@ function useIsDarkMode(): boolean {
 export function ColorizedSentence({
   sentence,
   grammar,
+  language,
   showLabels = false,
   size = 'md',
   className = '',
@@ -79,7 +81,10 @@ export function ColorizedSentence({
   };
 
   return (
-    <div className={`font-serif leading-relaxed ${sizeClasses[size]} ${className}`}>
+    <div
+      className={`font-serif leading-relaxed ${sizeClasses[size]} ${className}`}
+      lang={language}
+    >
       {segments.map((segment, index) => {
         const isNeutral = /^\s+$/.test(segment.text) || /^[^\p{L}\p{N}\s]+$/u.test(segment.text);
 
@@ -101,10 +106,12 @@ export function ColorizedSentence({
               aria-label={`${segment.text}: ${color.label}`}
               aria-describedby={isActive ? tooltipId : undefined}
               data-grammar-category={category}
+              data-alignment-id={segment.alignmentId}
               onClick={event => {
                 event.stopPropagation();
                 setActiveIndex(current => current === index ? null : index);
               }}
+              onFocus={() => setActiveIndex(index)}
               onBlur={() => setActiveIndex(null)}
             >
               {segment.text}

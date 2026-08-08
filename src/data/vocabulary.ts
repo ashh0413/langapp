@@ -5,7 +5,10 @@
 
 import type { GrammarSegment } from '@/types';
 import {
+  alignGrammarSegments,
+  annotateEnglishSentence,
   annotateSentence,
+  createEnglishVocabularyGrammarLexicon,
   createVocabularyGrammarLexicon,
 } from '@/lib/grammar';
 import { vocabularyExtra } from './vocabulary-extra';
@@ -17,6 +20,7 @@ export interface SourceSentence {
 
 export interface Sentence extends SourceSentence {
   grammar: GrammarSegment[];
+  englishGrammar: GrammarSegment[];
 }
 
 export interface RawVocabWord {
@@ -1762,13 +1766,22 @@ const rawVocabulary: RawVocabWord[] = [
 ];
 
 const grammarLexicon = createVocabularyGrammarLexicon(rawVocabulary);
+const englishGrammarLexicon = createEnglishVocabularyGrammarLexicon(rawVocabulary);
 
 export const vocabulary: VocabWord[] = rawVocabulary.map(word => ({
   ...word,
-  sentences: word.sentences.map(sentence => ({
-    ...sentence,
-    grammar: annotateSentence(sentence.french, grammarLexicon),
-  })),
+  sentences: word.sentences.map(sentence => {
+    const aligned = alignGrammarSegments(
+      annotateSentence(sentence.french, grammarLexicon),
+      annotateEnglishSentence(sentence.english, englishGrammarLexicon)
+    );
+
+    return {
+      ...sentence,
+      grammar: aligned.french,
+      englishGrammar: aligned.english,
+    };
+  }),
 }));
 
 export const VOCABULARY_COUNT = vocabulary.length;

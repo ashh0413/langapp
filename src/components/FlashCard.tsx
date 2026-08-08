@@ -47,6 +47,7 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
           <ColorizedSentence
             sentence={sentence.french}
             grammar={sentence.grammar}
+            language="fr"
             size="lg"
           />
         </div>
@@ -73,9 +74,13 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
               transition={{ duration: 0.2 }}
               className="space-y-4"
             >
-              <p className="text-xl leading-relaxed text-[var(--text-secondary)]">
-                {sentence.english}
-              </p>
+              <ColorizedSentence
+                sentence={sentence.english}
+                grammar={sentence.englishGrammar}
+                language="en"
+                size="md"
+                className="text-[var(--text-secondary)]"
+              />
 
               {/* Word Reference */}
               <div className="pt-4 border-t border-[var(--border)]">
@@ -91,15 +96,24 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col items-center justify-center py-8"
+              className="py-8"
             >
-              <div className="w-12 h-12 rounded-full bg-[var(--accent-bg)] flex items-center justify-center mb-3">
-                <svg className="w-6 h-6 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-              </div>
-              <p className="text-[var(--text-tertiary)] text-sm">Tap to reveal translation</p>
+              <button
+                type="button"
+                onClick={event => {
+                  event.stopPropagation();
+                  onReveal();
+                }}
+                className="mx-auto flex w-full flex-col items-center justify-center rounded-xl py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+              >
+                <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--accent-bg)]">
+                  <svg className="h-6 w-6 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </span>
+                <span className="text-sm text-[var(--text-tertiary)]">Tap or press Enter to reveal translation</span>
+              </button>
             </motion.div>
           )}
         </AnimatePresence>

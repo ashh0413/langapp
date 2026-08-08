@@ -195,6 +195,7 @@ export const GRAMMAR_COLORS_DARK: Record<GrammarCategory, GrammarColor> = {
 
 export interface VocabularyGrammarEntry {
   french: string;
+  english?: string;
   partOfSpeech: string;
 }
 
@@ -371,6 +372,279 @@ export function createVocabularyGrammarLexicon(
   });
 
   return lexicon;
+}
+
+const ENGLISH_ARTICLES = new Set([
+  'a', 'an', 'the', 'this', 'that', 'these', 'those', 'my', 'your', 'his',
+  'her', 'its', 'our', 'their', 'some', 'any', 'each', 'every', 'no',
+]);
+
+const ENGLISH_PREPOSITIONS = new Set([
+  'about', 'above', 'after', 'at', 'before', 'behind', 'below', 'between',
+  'by', 'during', 'for', 'from', 'in', 'into', 'near', 'of', 'on', 'over',
+  'through', 'to', 'under', 'until', 'with', 'without',
+]);
+
+const ENGLISH_CONJUNCTIONS = new Set([
+  'and', 'or', 'but', 'because', 'although', 'if', 'so', 'than', 'that',
+  'unless', 'when', 'while', 'yet',
+]);
+
+const ENGLISH_PRONOUNS = new Set([
+  'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us',
+  'them', 'mine', 'yours', 'hers', 'ours', 'theirs', 'who', 'whom', 'whose',
+  'what', 'which', 'one', 'someone', 'everyone', 'nobody', 'nothing',
+]);
+
+const ENGLISH_ADVERBS = new Set([
+  'again', 'already', 'also', 'always', 'away', 'here', 'how', 'just', 'later',
+  'maybe', 'never', 'not', 'now', 'often', 'only', 'quite', 'really', 'still',
+  'then', 'there', 'today', 'together', 'tomorrow', 'too', 'very', 'well',
+  'where', 'why', 'yesterday',
+]);
+
+const ENGLISH_ADJECTIVES = new Set([
+  'available', 'bad', 'beautiful', 'big', 'busy', 'closed', 'cold', 'correct',
+  'different', 'difficult', 'easy', 'excellent', 'fine', 'first', 'free',
+  'french', 'full', 'good', 'happy', 'heavy', 'hot', 'important', 'last',
+  'late', 'little', 'long', 'new', 'next', 'old', 'open', 'possible', 'ready',
+  'right', 'same', 'small', 'sorry', 'tired', 'young',
+]);
+
+const ENGLISH_VERBS = new Set([
+  'am', 'are', 'is', 'was', 'were', 'be', 'been', 'being', 'have', 'has',
+  'had', 'do', 'does', 'did', 'can', 'could', 'may', 'might', 'must', 'shall',
+  'should', 'will', 'would', 'go', 'goes', 'went', 'come', 'comes', 'came',
+  'want', 'wants', 'wanted', 'need', 'needs', 'needed', 'like', 'likes',
+  'liked', 'know', 'knows', 'knew', 'think', 'thinks', 'thought', 'say',
+  'says', 'said', 'tell', 'tells', 'told', 'make', 'makes', 'made', 'take',
+  'takes', 'took', 'see', 'sees', 'saw', 'give', 'gives', 'gave', 'get',
+  'gets', 'got', 'find', 'finds', 'found', 'leave', 'leaves', 'left', 'buy',
+  'buys', 'bought', 'sell', 'sells', 'sold', 'speak', 'speaks', 'spoke',
+  'eat', 'eats', 'ate', 'drink', 'drinks', 'drank', 'live', 'lives', 'work',
+  'works', 'read', 'write', 'writes', 'wrote', 'learn', 'learns', 'understand',
+  'understands', 'wait', 'waits', 'book', 'books', 'help', 'helps', 'call',
+  'calls', 'love', 'loves', 'prefer', 'prefers', 'start', 'starts', 'finish',
+  'finishes', 'choose', 'chooses', 'pay', 'pays', 'look', 'looks', 'listen',
+  'listens', 'visit', 'visits', 'prepare', 'prepares', 'organize', 'organizes',
+  'receive', 'receives',
+]);
+
+const ENGLISH_FIXED_EXPRESSIONS: ReadonlyArray<readonly [string, GrammarCategory]> = [
+  ['good morning', 'phrase'],
+  ['good evening', 'phrase'],
+  ['good night', 'phrase'],
+  ['thank you', 'phrase'],
+  ['of course', 'phrase'],
+];
+
+export function createEnglishVocabularyGrammarLexicon(
+  entries: readonly VocabularyGrammarEntry[]
+): GrammarLexicon {
+  const lexicon: Record<string, GrammarCategory> = {};
+
+  entries.forEach(({ english, partOfSpeech }) => {
+    if (!english) return;
+    const category = mapPartOfSpeechToCategory(partOfSpeech);
+    const variants = english.split(/[,;/]/u);
+
+    variants.forEach(variant => {
+      const normalized = normalize(variant)
+        .replace(/^to\s+/u, '')
+        .replace(/^(?:a|an|the)\s+/u, '');
+      if (normalized) lexicon[normalized] = category;
+    });
+  });
+
+  return lexicon;
+}
+
+function englishFixedExpressions(lexicon: GrammarLexicon) {
+  const vocabularyExpressions = Object.entries(lexicon)
+    .filter(([text]) => text.includes(' '))
+    .map(([text, category]) => [text, category] as const);
+
+  return [...ENGLISH_FIXED_EXPRESSIONS, ...vocabularyExpressions]
+    .sort((a, b) => b[0].length - a[0].length);
+}
+
+function tokenizeEnglishRaw(sentence: string, lexicon: GrammarLexicon): string[] {
+  const tokens: string[] = [];
+  const expressions = englishFixedExpressions(lexicon);
+  let position = 0;
+
+  while (position < sentence.length) {
+    const remainder = sentence.slice(position);
+    const foldedRemainder = fold(remainder);
+    const fixed = expressions.find(([expression]) => {
+      if (!foldedRemainder.startsWith(expression)) return false;
+      const nextCharacter = foldedRemainder[expression.length];
+      return !nextCharacter || !/[\p{L}\p{M}]/u.test(nextCharacter);
+    });
+
+    if (fixed) {
+      tokens.push(sentence.slice(position, position + fixed[0].length));
+      position += fixed[0].length;
+      continue;
+    }
+
+    const whitespace = remainder.match(/^\s+/u);
+    if (whitespace) {
+      tokens.push(whitespace[0]);
+      position += whitespace[0].length;
+      continue;
+    }
+
+    const word = remainder.match(WORD_PATTERN);
+    if (word) {
+      tokens.push(word[0]);
+      position += word[0].length;
+      continue;
+    }
+
+    const number = remainder.match(/^\d+(?:[.,]\d+)?/u);
+    if (number) {
+      tokens.push(number[0]);
+      position += number[0].length;
+      continue;
+    }
+
+    tokens.push(remainder[0]);
+    position += 1;
+  }
+
+  return tokens;
+}
+
+function englishLexiconCategory(word: string, lexicon: GrammarLexicon): GrammarCategory {
+  const normalized = normalize(word);
+  const direct = lexicon[normalized];
+  if (direct) return direct;
+
+  const candidates = normalized.endsWith('ies')
+    ? [`${normalized.slice(0, -3)}y`]
+    : normalized.endsWith('es')
+      ? [normalized.slice(0, -2), normalized.slice(0, -1)]
+      : normalized.endsWith('s')
+        ? [normalized.slice(0, -1)]
+        : [];
+
+  return candidates.map(candidate => lexicon[candidate]).find(Boolean) ?? 'other';
+}
+
+export function classifyEnglishWord(
+  word: string,
+  lexicon: GrammarLexicon = {}
+): GrammarCategory {
+  const normalized = normalize(word);
+  const fixed = englishFixedExpressions(lexicon).find(([expression]) => expression === normalized);
+  if (fixed) return fixed[1];
+  if (ENGLISH_ARTICLES.has(normalized)) return 'article';
+  if (ENGLISH_PREPOSITIONS.has(normalized)) return 'preposition';
+  if (ENGLISH_CONJUNCTIONS.has(normalized)) return 'conjunction';
+  if (ENGLISH_PRONOUNS.has(normalized)) return 'pronoun';
+  if (ENGLISH_ADVERBS.has(normalized) || normalized.endsWith('ly')) return 'adverb';
+  if (ENGLISH_VERBS.has(normalized)) return 'verb';
+  if (ENGLISH_ADJECTIVES.has(normalized)) return 'adjective';
+  if (/^(?:[a-z]+n['’]t|can['’]t|won['’]t)$/u.test(normalized)) return 'verb';
+  return englishLexiconCategory(normalized, lexicon);
+}
+
+function englishContextualCategory(
+  token: string,
+  index: number,
+  tokens: readonly string[],
+  lexicon: GrammarLexicon
+): GrammarCategory {
+  const direct = classifyEnglishWord(token, lexicon);
+  if (direct !== 'other') return direct;
+
+  const { previous, previousPrevious } = lexicalNeighbors(tokens, index);
+  const previousCategory = previous ? classifyEnglishWord(previous, lexicon) : undefined;
+  const previousPreviousCategory = previousPrevious
+    ? classifyEnglishWord(previousPrevious, lexicon)
+    : undefined;
+  const normalized = normalize(token);
+
+  if (/^\p{Lu}/u.test(token) && index > 0) return 'noun';
+  if (previousCategory === 'article') {
+    return ENGLISH_ADJECTIVES.has(normalized) ? 'adjective' : 'noun';
+  }
+  if (previousCategory === 'adjective' && previousPreviousCategory === 'article') return 'noun';
+  if (previousCategory === 'pronoun' || ENGLISH_VERBS.has(normalize(previous ?? ''))) return 'verb';
+  if (/(?:ing|ed)$/u.test(normalized)) return 'verb';
+
+  return 'other';
+}
+
+export function annotateEnglishSentence(
+  sentence: string,
+  lexicon: GrammarLexicon = {}
+): GrammarSegment[] {
+  const rawTokens = tokenizeEnglishRaw(sentence, lexicon);
+  const segments: GrammarSegment[] = [];
+
+  rawTokens.forEach((token, index) => {
+    if (WHITESPACE_PATTERN.test(token) || PUNCTUATION_PATTERN.test(token)) {
+      segments.push({ text: token });
+      return;
+    }
+
+    const pronounContraction = token.match(/^(I|you|we|they|he|she|it)(['’](?:m|re|ve|ll|d|s))$/iu);
+    if (pronounContraction) {
+      segments.push({ text: pronounContraction[1], category: 'pronoun' });
+      segments.push({ text: pronounContraction[2], category: 'verb' });
+      return;
+    }
+
+    segments.push({
+      text: token,
+      category: englishContextualCategory(token, index, rawTokens, lexicon),
+    });
+  });
+
+  return segments;
+}
+
+export function alignGrammarSegments(
+  french: readonly GrammarSegment[],
+  english: readonly GrammarSegment[]
+): { french: GrammarSegment[]; english: GrammarSegment[] } {
+  const alignedFrench: GrammarSegment[] = french.map(segment => ({
+    ...segment,
+    alignmentId: undefined,
+  }));
+  const alignedEnglish: GrammarSegment[] = english.map(segment => ({
+    ...segment,
+    alignmentId: undefined,
+  }));
+  const categories = new Set(
+    [...alignedFrench, ...alignedEnglish]
+      .map(segment => segment.category)
+      .filter((category): category is GrammarCategory => Boolean(category))
+  );
+
+  categories.forEach(category => {
+    const frenchIndexes = alignedFrench.flatMap((segment, index) =>
+      segment.category === category ? [index] : []
+    );
+    const englishIndexes = alignedEnglish.flatMap((segment, index) =>
+      segment.category === category ? [index] : []
+    );
+    if (!frenchIndexes.length || !englishIndexes.length) return;
+
+    const groupCount = Math.min(frenchIndexes.length, englishIndexes.length);
+    frenchIndexes.forEach((segmentIndex, index) => {
+      const group = Math.min(Math.floor(index * groupCount / frenchIndexes.length), groupCount - 1);
+      alignedFrench[segmentIndex].alignmentId = `${category}-${group + 1}`;
+    });
+    englishIndexes.forEach((segmentIndex, index) => {
+      const group = Math.min(Math.floor(index * groupCount / englishIndexes.length), groupCount - 1);
+      alignedEnglish[segmentIndex].alignmentId = `${category}-${group + 1}`;
+    });
+  });
+
+  return { french: alignedFrench, english: alignedEnglish };
 }
 
 function contractionParts(word: string): [string, string] | null {

@@ -43,6 +43,7 @@ export type GrammarCategory =
 export interface GrammarSegment {
   text: string;
   category?: GrammarCategory;
+  alignmentId?: string;
 }
 
 // Sentence structure with French, English, and grammar annotations
@@ -50,6 +51,7 @@ export interface Sentence {
   french: string;
   english: string;
   grammar: GrammarSegment[];
+  englishGrammar: GrammarSegment[];
 }
 
 // Word/Vocabulary item

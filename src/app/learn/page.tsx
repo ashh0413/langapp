@@ -238,14 +238,19 @@ export default function LearnPage() {
                         <ColorizedSentence
                           sentence={sentence.french}
                           grammar={sentence.grammar}
+                          language="fr"
                           size="sm"
                           className="flex-1"
                         />
                       </div>
                       {showTranslation && (
-                        <p className="text-sm text-[var(--text-secondary)] pl-9">
-                          {sentence.english}
-                        </p>
+                        <ColorizedSentence
+                          sentence={sentence.english}
+                          grammar={sentence.englishGrammar}
+                          language="en"
+                          size="sm"
+                          className="pl-9 opacity-90"
+                        />
                       )}
                     </div>
                   ))}
