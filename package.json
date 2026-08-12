@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest",
-    "test:run": "vitest run"
+    "test": "vitest src",
+    "test:run": "vitest run src"
   },
   "dependencies": {
     "framer-motion": "^12.43.0",

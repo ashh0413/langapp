@@ -193,7 +193,7 @@ describe('vocabulary annotations', () => {
   it('keeps every alignment category-consistent and present in both languages', () => {
     vocabulary.flatMap(word => word.sentences).forEach(sentence => {
       const frenchAlignments = sentence.grammar.filter(segment => segment.alignmentId);
-      const englishAlignments = sentence.englishGrammar.filter(segment => segment.alignmentId);
+      const englishAlignments = sentence.literalGrammar.filter(segment => segment.alignmentId);
       const allIds = new Set([
         ...frenchAlignments.map(segment => segment.alignmentId),
         ...englishAlignments.map(segment => segment.alignmentId),

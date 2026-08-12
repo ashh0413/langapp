@@ -606,6 +606,15 @@ export function annotateEnglishSentence(
   return segments;
 }
 
+// annotateLiteralEnglish is identical to annotateEnglishSentence but named for semantic clarity.
+// Literal translations follow the same grammar rules as natural English.
+export function annotateLiteralEnglish(
+  sentence: string,
+  lexicon: GrammarLexicon = {}
+): GrammarSegment[] {
+  return annotateEnglishSentence(sentence, lexicon);
+}
+
 export function alignGrammarSegments(
   french: readonly GrammarSegment[],
   english: readonly GrammarSegment[]

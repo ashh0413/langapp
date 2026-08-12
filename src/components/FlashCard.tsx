@@ -1,8 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AudioButton } from './AudioButton';
 import { ColorizedSentence, GrammarLegend } from './ColorizedSentence';
+import { TranslationDisplay } from './TranslationDisplay';
+import type { TranslationMode } from '@/types';
 import type { VocabWord } from '@/data/vocabulary';
 
 interface FlashCardProps {
@@ -12,6 +15,7 @@ interface FlashCardProps {
 }
 
 export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
+  const [translationMode, setTranslationMode] = useState<TranslationMode>('literal');
   const sentenceIndex = (parseInt(word.id.replace('v', ''), 10) - 1) % word.sentences.length;
   const sentence = word.sentences[sentenceIndex];
 
@@ -74,12 +78,12 @@ export function FlashCard({ word, isRevealed, onReveal }: FlashCardProps) {
               transition={{ duration: 0.2 }}
               className="space-y-4"
             >
-              <ColorizedSentence
-                sentence={sentence.english}
-                grammar={sentence.englishGrammar}
-                language="en"
+              <TranslationDisplay
+                sentence={sentence}
+                mode={translationMode}
+                onModeChange={setTranslationMode}
                 size="md"
-                className="text-[var(--text-secondary)]"
+                englishClassName="text-[var(--text-secondary)]"
               />
 
               {/* Word Reference */}

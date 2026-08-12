@@ -49,10 +49,19 @@ export interface GrammarSegment {
 // Sentence structure with French, English, and grammar annotations
 export interface Sentence {
   french: string;
-  english: string;
+  english: string;        // natural (fluent) English translation
+  literal: string;        // readable translation that preserves French structure
   grammar: GrammarSegment[];
-  englishGrammar: GrammarSegment[];
+  englishGrammar: GrammarSegment[]; // natural English grammar
+  literalGrammar: GrammarSegment[];
 }
+
+// Translation display mode
+export type TranslationMode = 'literal' | 'natural';
+export const TRANSLATION_MODE_LABELS: Record<TranslationMode, string> = {
+  literal: 'Literal',
+  natural: 'Natural',
+};
 
 // Word/Vocabulary item
 export interface Word {
